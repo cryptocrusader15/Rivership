@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title itemprop="name">What Is OP_VAULT and How Will It Benefit Bitcoin Users? | River</title>
+  
+  <meta itemprop="name" content="What Is OP_VAULT and How Will It Benefit Bitcoin Users? | River" />
+  <meta name="application-name" content="What Is OP_VAULT and How Will It Benefit Bitcoin Users? | River" />
+  
+    <meta name="description" content="Bitcoin vaults will make self-custody significantly safer, by allowing users to intervene in case of a security breach." />
+  
+  <meta name="apple-itunes-app" content="app-id=1536176542"><link rel="canonical" href="what-is-op-vault-in-bitcoin.1"><meta property="og:site_name" content="River" />
+<meta property="og:url" content="/learn/what-is-op-vault-in-bitcoin/" />
+
+
+    <meta property="og:type" content="article" />
+    
+    
+        
+         
+            
+            <meta property="article:section" content="River Learn - Bitcoin Technology" />
+            <meta property="article:tag" content="River Learn - Bitcoin Technology" />
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:site" content="@River">
+            <meta name="twitter:creator" content="@River">
+            <meta property="og:title" content="What Is OP_VAULT and How Will it Benefit Bitcoin Users? | River Learn - Bitcoin Technology" />
+            <meta name="twitter:title" content="What Is OP_VAULT and How Will it Benefit Bitcoin Users? | River Learn - Bitcoin Technology">
+            
+                <meta name="twitter:image" content="https://river.com/learn/images/heroes/bitcoin-op-vault.png">
+                <meta property="og:image" content="https://river.com/learn/images/heroes/bitcoin-op-vault.png" />
+            
+        
+    
+
+
+  
+<link rel="stylesheet" href="static/css/public.min.a7c5bb1c19f8e5cf9acedaf7149add27dca86f83623fb66e2781446f94ce3055.css" integrity="sha256-p8W7HBn45c&#43;aztr3FJrdJ9yob4NiP7ZuJ4FEb5TOMFU=">
+
+  
+
+
+<script type="text/javascript">
+  (function(c){var b={};function a(d){if(b[d])return b[d].exports;var e=b[d]={i:d,l:!1,exports:{}};return c[d].call(e.exports,e,e.exports,a),e.l=!0,e.exports}return a.m=c,a.c=b,a.d=function(b,c,d){a.o(b,c)||Object.defineProperty(b,c,{configurable:!1,enumerable:!0,get:d})},a.r=function(a){Object.defineProperty(a,'__esModule',{value:!0})},a.n=function(b){var c=b&&b.__esModule?function(){return b.default}:function(){return b};return a.d(c,'a',c),c},a.o=function(a,b){return Object.prototype.hasOwnProperty.call(a,b)},a.p="",a(a.s=0)})({"./js/data/tracking.ts":function(h,b,d){"use strict";d.r(b),b.default={init:function(){g()}};function a(a,b,c,d){rudderanalytics.track("Click",{region:a,type:b,title:c,path:d})}function e(b){const c=document.getElementsByName(b);c.forEach(function(c,d,e){c.addEventListener("click",function(){a(b.split("-")[0],"title",c.innerText.toLowerCase(),c.getAttribute("href"))})})}function f(b){const c=document.getElementsByName(b);c.forEach(function(c,f,g){let d=c.firstElementChild.getAttribute("alt").toLowerCase(),e=c.getAttribute("href");c.addEventListener("click",function(){a(b.split("-")[0],"image",d,e)})})}function c(b){const c=document.getElementsByName(b);c.forEach(function(c,d,e){c.addEventListener("click",function(){a(b.split("-")[0],"description",c.getAttribute("id").toLowerCase(),c.getAttribute("href"))})})}function g(){const a=["navbar-link","navbar-intellience","navbar-login","navbar-signup","homepage-content","homepage-glossary","featured-article","sidebar-link","sidebar-cta","related_term","related_article","article-cta","article-image-caption","category-article","glossary-link","glossary-letter","footer-app","footer-site-status","footer-product","footer-support","footer-careers","footer-company-blog","footer-company","footer-social-twitter","footer-social-linkedin","footer-social-facebook","footer-social-instagram","footer-social-youtube","footer-social-github","footer-learn","footer-intelligence","footer-legal"];for(const b in a)e(a[b]);const b=["related_article-image","featured-article-image","homepage-content-image","homepage-glossary-image","footer-app-image","navbar-home-image","category-article-image"];for(const a in b)f(b[a]);const d=["homepage-glossary-description","homepage-content-description","featured-article-description","article-learn-more","related_article-description","related_term-description","category-article-description","article-highlight-bubble"];for(const a in d)c(d[a])}},"./js/public.ts":function(j,i,a){"use strict";var d,h,e,b,c,f,g;a.r(i),d=a("./sass/branches/index.scss"),h=a.n(d),e=a("./js/utils/nav_marketing.ts"),b=a("./js/utils/subscribe_form.ts"),c=a("./js/utils/promo_form.ts"),f=a("./js/utils/sidebar_nav.ts"),g=a("./js/data/tracking.ts"),document.addEventListener("DOMContentLoaded",()=>{e.default.init(),b.default.init(),f.default.init(),g.default.init(),c.default.init()})},"./js/utils/nav_marketing.ts":function(e,a,b){"use strict";b.r(a),a.default={init:function(){d({hitSelector:".js-dropdown",revealSelector:".c-nav-marketing__dropdown-container"});const a=document.querySelector(".c-nav-marketing"),b=document.querySelector(".js-nav");b.addEventListener("click",function(){c(a)})}};function c(a){a.classList.contains("c-nav-marketing--show-responsive-menu")?a.classList.remove("c-nav-marketing--show-responsive-menu"):a.classList.add("c-nav-marketing--show-responsive-menu")}function d({hitSelector:c,revealSelector:d}){const a=document.querySelectorAll(c),b=document.querySelectorAll(d);if(a.length!==b.length)throw new Error("incorrect dropdown setup, you must have an element to show for every reveal element");a.forEach((c,f)=>{let d=!1;const a=b[f];function g(b){b.stopPropagation(),c.classList.add("c-nav-marketing__open"),a===null||a===void 0?void 0:a.classList.add("c-nav-marketing__show"),d=!0}function e(b){c.classList.remove("c-nav-marketing__open"),a===null||a===void 0?void 0:a.classList.remove("c-nav-marketing__show"),d=!1}function h(a){d?e(a):g(a)}c===null||c===void 0?void 0:c.addEventListener("click",h),a&&document.addEventListener("click",e)})}},"./js/utils/promo_form.ts":function(d,a,b){"use strict";b.r(a),a.default={init:function(){const a=document.querySelectorAll(".js-promoForm");a.forEach(a=>{a.addEventListener("submit",function(b){b.preventDefault(),c(a)})})}};function c(a){const b=a.elements.email.value;window.location.href="https://river.com/signup?email="+b}},"./js/utils/sidebar_nav.ts":function(d,a,b){"use strict";b.r(a),a.default={init:function(){const a=document.querySelectorAll(".c-learn__sidebar-more-button");a.forEach(function(a,b,d){a.addEventListener("click",function(){const b=a.id.split("--")[0];c(b)})})}};function c(b){const a=document.getElementById(b+"-more"),c=document.getElementById(b+"--less-button"),d=document.getElementById(b+"--more-button");a.style.maxHeight=="0px"||a.style.maxHeight==""?a.style.maxHeight="1500px":a.style.maxHeight="0px",c.classList.toggle("c-learn__sidebar-more-button--visible"),d.classList.toggle("c-learn__sidebar-more-button--visible")}},"./js/utils/subscribe_form.ts":function(e,a,b){"use strict";b.r(a),a.default={init:function(){const a=document.querySelectorAll(".js-subscribeForm");a.forEach(a=>{a.addEventListener("submit",function(b){b.preventDefault(),d(a)})})}};function c(a){let b=a.closest(".js-subscribeFormContainer");b.innerHTML="<div class='c-learn__sidebar-title'>River Intelligence</div><br/><p><b>Confirm Your Subscription</b></p><p>Please check your email address to confirm your subscription.</p>"}function d(a){var d=a.querySelector('input[type="submit"]'),b;d.disabled=!0,b=new XMLHttpRequest,b.open(a.method,a.action),b.setRequestHeader("Accept","application/json; charset=utf-8"),b.setRequestHeader("Content-Type","application/json; charset=UTF-8"),b.onloadend=function(b){b.target.status===400?(alert("Something went wrong"),d.disabled=!1):b.target.status===200&&c(a)},b.send(JSON.stringify({fields:[{name:"email",value:a.elements.email.value}]}))}},"./sass/branches/index.scss":function(a,b,c){a.exports={gold:"#e2be79",textBlueLight:"#8088a5",fontWeightMedium:"500"}},0:function(a,c,b){a.exports=b("./js/public.ts")}})
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VYX9CWNXM"></script>
+<script type="text/javascript">
+ 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());  
+  gtag('config', 'G-0VYX9CWNXM', {
+    'custom_map': {'dimension1': 'river_learn_category'}
+  });
+
+  
+  
+      gtag('event', 'river_learn_category_dimension', {'category': 'learn-bitcoin-and-blockchain-technology'});
+  
+</script>
+
+</head>
+
+
+<body>
+  <nav role="navigation">
+  <div class="c-nav-marketing__wrapper">
+    <div class="c-nav-marketing">
+      <a name="navbar-home-image" href="../app.1" class="c-nav-marketing__logo">
+        <img src="images/logo/logo.svg" alt="River Logo">
+      </a>
+      <div class="c-nav-marketing__left">
+        
+          
+            
+              <div name="navbar-individuals" class="js-dropdown c-nav-marketing__link c-nav-marketing__dropdown-link">Individuals&nbsp;
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="square" stroke-linejoin="arcs">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+                <ul name="individuals-dropdown" class="c-nav-marketing c-nav-marketing__dropdown-container ">
+                  
+                    <li class="c-nav-marketing__dropdown-item">
+                      <a name="navbar-buy-bitcoin" href="../buy-bitcoin"> Buy &amp; Sell</a>
+                    </li>
+                  
+                    <li class="c-nav-marketing__dropdown-item">
+                      <a name="navbar-buy-bitcoin" href="../mining"> River Mining</a>
+                    </li>
+                  
+                    <li class="c-nav-marketing__dropdown-item">
+                      <a name="navbar-buy-bitcoin" href="../wallet"> Wallet &amp; Custody</a>
+                    </li>
+                  
+                    <li class="c-nav-marketing__dropdown-item">
+                      <a name="navbar-buy-bitcoin" href="../private-client"> Private Client</a>
+                    </li>
+                  
+                    <li class="c-nav-marketing__dropdown-item">
+                      <a name="navbar-buy-bitcoin" href="../inheritance"> Inheritance</a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+          
+        
+          
+            <a name="navbar-link" class="c-nav-marketing__link" href="../institutions">Business</a>
+          
+        
+          
+            <a name="navbar-link" class="c-nav-marketing__link" href="https://rls.dev">Developers</a>
+          
+        
+          
+            <a name="navbar-link" class="c-nav-marketing__link" href="../learn.1">Learn</a>
+          
+        
+          
+            
+              <div name="navbar-about" class="js-dropdown c-nav-marketing__link c-nav-marketing__dropdown-link">About&nbsp;
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="square" stroke-linejoin="arcs">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+                <ul name="about-dropdown" class="c-nav-marketing c-nav-marketing__dropdown-container ">
+                  
+                    <li class="c-nav-marketing__dropdown-item">
+                      <a name="navbar-about" href="../about"> Company</a>
+                    </li>
+                  
+                    <li class="c-nav-marketing__dropdown-item">
+                      <a name="navbar-about" href="../security"> Security</a>
+                    </li>
+                  
+                    <li class="c-nav-marketing__dropdown-item">
+                      <a name="navbar-about" href="../careers"> Careers</a>
+                    </li>
+                  
+                    <li class="c-nav-marketing__dropdown-item">
+                      <a name="navbar-about" href="../support"> Contact Support</a>
+                    </li>
+                  
+                </ul>
+              </div>
+            
+          
+        
+      </div>
+      <div class="c-nav-marketing__right">
+          <a name="navbar-login" class="c-nav-marketing__link" href="../login">Log in</a>
+          <a name="navbar-signup" class="c-button c-button--dark-gray-temp-rebrand" href="../signup">Sign Up</a>
+      </div>
+      <a class="js-nav c-nav-marketing__menu">
+        
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<g>
+		<path d="M491.318,235.318H20.682C9.26,235.318,0,244.577,0,256s9.26,20.682,20.682,20.682h470.636
+			c11.423,0,20.682-9.259,20.682-20.682C512,244.578,502.741,235.318,491.318,235.318z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M491.318,78.439H20.682C9.26,78.439,0,87.699,0,99.121c0,11.422,9.26,20.682,20.682,20.682h470.636
+			c11.423,0,20.682-9.26,20.682-20.682C512,87.699,502.741,78.439,491.318,78.439z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M491.318,392.197H20.682C9.26,392.197,0,401.456,0,412.879s9.26,20.682,20.682,20.682h470.636
+			c11.423,0,20.682-9.259,20.682-20.682S502.741,392.197,491.318,392.197z"/>
+	</g>
+</g>
+</svg>
+
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+  <main role="main">
+    
+
+<div class="c-learn">
+  <div class="c-learn__index-wrapper">
+    <div class="c-learn__sidebar">
+  
+  <div class="c-learn-subscribe__form c-learn-subscribe__form--sidebar js-subscribeFormContainer">
+  <div class="c-learn__sidebar-title">River Intelligence</div>
+  <p>Sign up for our curated weekly newsletter delivering exclusive market insights to your inbox.</p>
+  <form action="https://api.hsforms.com/submissions/v3/integration/submit/5916512/7c0adb48-e7af-473e-a382-8cc534388d22", method="post" class="js-subscribeForm">
+    <div class="c-learn-subscribe__form-fields">
+      <input type="email" placeholder="Email Address" name="email" required>
+      <input type="submit" value="Subscribe" class="c-button  c-learn-subscribe__form--button">
+    </div>
+  </form>
+</div>
+  
+    
+    
+    
+    
+      
+        <div class="c-learn__sidebar-item">
+          <div class="c-learn__sidebar-item-header">
+            
+            <p class="c-learn__sidebar-title"><a name="sidebar-link" href="bitcoin-basics/index.html">Bitcoin Basics</a></p>
+          </div>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/what-is-bitcoin/"><a name="sidebar-link" href="what-is-bitcoin/index.html">What Is Bitcoin?</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/how-to-buy-bitcoin/"><a name="sidebar-link" href="how-to-buy-bitcoin.1">How to Buy Bitcoin</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/how-do-i-send-and-receive-bitcoin/"><a name="sidebar-link" href="how-do-i-send-and-receive-bitcoin/index.html">Sending and Receiving Bitcoin</a></li>
+            </ul>
+          
+          
+          <div class="c-learn__sidebar-more" id="bitcoin-basics-more">
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/crypto-vs-bitcoin/"><a name="sidebar-link" href="crypto-vs-bitcoin/index.html">Crypto vs. Bitcoin: What You Need to Know</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-does-a-bitcoin-transaction-work/"><a name="sidebar-link" href="how-does-a-bitcoin-transaction-work/index.html">How Do Bitcoin Transactions Work?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-are-public-private-keys/"><a name="sidebar-link" href="what-are-public-private-keys/index.html">What Are Public and Private Keys?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/is-bitcoin-fair/"><a name="sidebar-link" href="is-bitcoin-fair/index.html">Is Bitcoin Fair?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-can-you-buy-with-bitcoins/"><a name="sidebar-link" href="what-can-you-buy-with-bitcoins/index.html">What Can You Buy With Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-vs-gold/"><a name="sidebar-link" href="bitcoin-vs-gold/index.html">Bitcoin vs. Gold</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-vs-ethereum/"><a name="sidebar-link" href="bitcoin-vs-ethereum/index.html">Bitcoin vs. Ethereum</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-privacy-and-anonymity/"><a name="sidebar-link" href="bitcoin-privacy-and-anonymity/index.html">Bitcoin Privacy and Anonymity</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/understanding-fiat-currencies/"><a name="sidebar-link" href="understanding-fiat-currencies/index.html">Understanding Fiat Currencies</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-fungibility/"><a name="sidebar-link" href="bitcoin-fungibility/index.html">Understanding Bitcoin Fungibility</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoins-competitors/"><a name="sidebar-link" href="bitcoins-competitors/index.html">Bitcoin&#39;s Competitors</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-encryption/"><a name="sidebar-link" href="what-is-encryption/index.html">What Is Encryption?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-bitcoin-can-scale/"><a name="sidebar-link" href="how-bitcoin-can-scale/index.html">How Bitcoin Can Scale</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoins-cultural-significance/"><a name="sidebar-link" href="bitcoins-cultural-significance/index.html">Bitcoin&#39;s Cultural Significance</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/can-bitcoin-be-banned/"><a name="sidebar-link" href="can-bitcoin-be-banned/index.html">Can Bitcoin Be Banned?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/is-bitcoin-safe/"><a name="sidebar-link" href="is-bitcoin-safe/index.html">Is Bitcoin Safe?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-as-a-medium-of-exchange/"><a name="sidebar-link" href="bitcoin-as-a-medium-of-exchange/index.html">Bitcoin as a Medium of Exchange</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/environmental-impact-bitcoin/"><a name="sidebar-link" href="environmental-impact-bitcoin/index.html">The Environmental Impact of Bitcoin</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/on-chain-vs-off-chain-bitcoin-transactions/"><a name="sidebar-link" href="on-chain-vs-off-chain-bitcoin-transactions/index.html">On-Chain vs. Off-Chain Bitcoin Transactions</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/why-people-invest-in-bitcoin/"><a name="sidebar-link" href="why-people-invest-in-bitcoin/index.html">Why People Invest in Bitcoin</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/why-dont-altcoins-threaten-bitcoin/"><a name="sidebar-link" href="why-dont-altcoins-threaten-bitcoin/index.html">Why Don&#39;t Altcoins Threaten Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/can-bitcoins-hard-cap-of-21-million-be-changed/"><a name="sidebar-link" href="can-bitcoins-hard-cap-of-21-million-be-changed">Can Bitcoin&#39;s Hard Cap of 21 Million Be Changed?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/the-myths-of-bitcoin/"><a name="sidebar-link" href="the-myths-of-bitcoin/index.html">The Myths of Bitcoin</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoins-predecessors/"><a name="sidebar-link" href="bitcoins-predecessors/index.html">Bitcoin&#39;s Predecessors</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-many-satoshis-are-in-a-bitcoin/"><a name="sidebar-link" href="how-many-satoshis-are-in-a-bitcoin/index.html">How Many Satoshis Are in a Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/who-creates-new-bitcoin/"><a name="sidebar-link" href="who-creates-new-bitcoin/index.html">Who Creates New Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-bitcoin-fees-work/"><a name="sidebar-link" href="how-bitcoin-fees-work.1">How Bitcoin Fees Work</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-money/"><a name="sidebar-link" href="what-is-money/index.html">What Is Money?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-as-an-investment/"><a name="sidebar-link" href="bitcoin-as-an-investment/index.html">Bitcoin as an Investment</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-to-avoid-bitcoin-scams/"><a name="sidebar-link" href="how-to-avoid-bitcoin-scams/index.html">How to Avoid Bitcoin Scams</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/can-bitcoin-be-hacked/"><a name="sidebar-link" href="can-bitcoin-be-hacked/index.html">Can Bitcoin Be Hacked?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-many-people-use-bitcoin/"><a name="sidebar-link" href="how-many-people-use-bitcoin/index.html">How Many People Use Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-events-and-conferences/"><a name="sidebar-link" href="bitcoin-events-and-conferences/index.html">Bitcoin Events and Conferences in 2023</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/who-owns-the-most-bitcoin/"><a name="sidebar-link" href="who-owns-the-most-bitcoin/index.html">Who Owns the Most Bitcoin in 2023?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-do-i-get-bitcoin/"><a name="sidebar-link" href="how-do-i-get-bitcoin/index.html">How Do I Get Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-much-bitcoin-does-the-government-have/"><a name="sidebar-link" href="how-much-bitcoin-does-the-government-have/index.html">How Much Bitcoin Does the Government Have?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoins-network-effect/"><a name="sidebar-link" href="bitcoins-network-effect/index.html">Bitcoin&#39;s Network Effect</a></li>
+              </ul>
+            
+            <p class="c-learn__sidebar-nav-items" style="font-size: .9rem;">&#x27A4<a href="bitcoin-basics/index.html"  style="margin-left: 10px;">Explore more in Bitcoin Basics</a></p>
+          </div>
+          <a id="bitcoin-basics--more-button" class="c-learn__sidebar-more-button--visible c-learn__sidebar-more-button c-learn__sidebar-nav-items">More <span style="vertical-align: middle; font-size: .8em;">&#9660</span></a>
+          <a id="bitcoin-basics--less-button" class="c-learn__sidebar-more-button c-learn__sidebar-nav-items">Less <span style='vertical-align: middle; font-size: .8em;'>&#9650</span></a>
+          
+      </div>
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+      
+        <div class="c-learn__sidebar-item">
+          <div class="c-learn__sidebar-item-header">
+            
+            <p class="c-learn__sidebar-title"><a name="sidebar-link" href="bitcoin-markets-and-price/index.html">Bitcoin Markets &amp; Price</a></p>
+          </div>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/why-do-bitcoin-have-value/"><a name="sidebar-link" href="why-do-bitcoin-have-value/index.html">Why Does Bitcoin Have Value?</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/what-is-backing-bitcoin/"><a name="sidebar-link" href="what-is-backing-bitcoin/index.html">What Is Backing Bitcoin?</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/what-is-market-making/"><a name="sidebar-link" href="what-is-market-making/index.html">What Is Market Making?</a></li>
+            </ul>
+          
+          
+          <div class="c-learn__sidebar-more" id="bitcoin-markets-and-price-more">
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/should-i-buy-bitcoin-now/"><a name="sidebar-link" href="should-i-buy-bitcoin-now/index.html">Should I Buy Bitcoin Now in 2023?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/why-is-bitcoin-volatile/"><a name="sidebar-link" href="why-is-bitcoin-volatile/index.html">Why Is Bitcoin Volatile?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-dollar-cost-averaging/"><a name="sidebar-link" href="what-is-dollar-cost-averaging/index.html">What Is Dollar Cost Averaging Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/actors-in-bitcoin-markets/"><a name="sidebar-link" href="actors-in-bitcoin-markets/index.html">Who Are the Actors in Bitcoin Markets?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/history-of-monetary-collapse-in-zimbabwe/"><a name="sidebar-link" href="history-of-monetary-collapse-in-zimbabwe/index.html">The History of Monetary Collapse in Zimbabwe</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-is-the-bitcoin-price-determined/"><a name="sidebar-link" href="how-is-the-bitcoin-price-determined/index.html">How Is the Bitcoin Price Determined?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-do-macro-events-affect-bitcoin/"><a name="sidebar-link" href="how-do-macro-events-affect-bitcoin/index.html">How Do Macroeconomic Events Affect Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-a-bear-market/"><a name="sidebar-link" href="what-is-a-bear-market/index.html">What Is a Bear Market?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-much-worlds-money-in-bitcoin/"><a name="sidebar-link" href="how-much-worlds-money-in-bitcoin/index.html">How Much of the World&#39;s Money Is in Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-a-bull-market/"><a name="sidebar-link" href="what-is-a-bull-market/index.html">What Is a Bull Market?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-a-bitcoin-etf/"><a name="sidebar-link" href="what-is-a-bitcoin-etf/index.html">What Is a Bitcoin ETF?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-are-stablecoins/"><a name="sidebar-link" href="what-are-stablecoins/index.html">What Are Stablecoins?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-collateralized-lending/"><a name="sidebar-link" href="what-is-collateralized-lending/index.html">What Is Collateralized Lending?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-to-read-a-candlestick-chart/"><a name="sidebar-link" href="how-to-read-a-candlestick-chart/index.html">How to Read a Candlestick Chart</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-technical-analysis/"><a name="sidebar-link" href="what-is-technical-analysis/index.html">What Is Technical Analysis?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-and-the-stock-to-flow-s2f-model/"><a name="sidebar-link" href="bitcoin-and-the-stock-to-flow-s2f-model/index.html">Bitcoin and the Stock-to-Flow (S2F) Model</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/efficient-market-hypothesis/"><a name="sidebar-link" href="efficient-market-hypothesis/index.html">The Efficient Market Hypothesis</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-fundamental-analysis/"><a name="sidebar-link" href="bitcoin-fundamental-analysis/index.html">Bitcoin Fundamental Analysis</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-investment-performance-metrics/"><a name="sidebar-link" href="bitcoin-investment-performance-metrics/index.html">Bitcoin Investment Performance Metrics</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/trading-order-types/"><a name="sidebar-link" href="trading-order-types/index.html">Understanding Trading Order Types</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-the-bitcoin-market/"><a name="sidebar-link" href="what-is-the-bitcoin-market/index.html">What Is the Bitcoin Market?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/will-deflation-hurt-the-economy/"><a name="sidebar-link" href="will-deflation-hurt-the-economy/index.html">Will Deflation Hurt the Economy?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/real-bitcoin-vs-bitcoin-derivatives/"><a name="sidebar-link" href="real-bitcoin-vs-bitcoin-derivatives/index.html">Real Bitcoin vs. Bitcoin Derivatives</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/brokerages-vs-exchanges/"><a name="sidebar-link" href="brokerages-vs-exchanges/index.html">Brokerages vs. Exchanges</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-to-read-a-bitcoin-depth-chart/"><a name="sidebar-link" href="how-to-read-a-bitcoin-depth-chart/index.html">How to Read a Bitcoin Depth Chart</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/portfolio-management/"><a name="sidebar-link" href="portfolio-management/index.html">Portfolio Management</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/leveraged-bitcoin-trading/"><a name="sidebar-link" href="leveraged-bitcoin-trading/index.html">Leveraged Bitcoin Trading</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-flash-crashes/"><a name="sidebar-link" href="bitcoin-flash-crashes/index.html">Bitcoin Flash Crashes</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/will-inflation-hurt-the-economy/"><a name="sidebar-link" href="will-inflation-hurt-the-economy/index.html">Will Inflation Hurt the Economy?</a></li>
+              </ul>
+            
+            <p class="c-learn__sidebar-nav-items" style="font-size: .9rem;">&#x27A4<a href="bitcoin-markets-and-price/index.html"  style="margin-left: 10px;">Explore more in Bitcoin Markets and Price</a></p>
+          </div>
+          <a id="bitcoin-markets-and-price--more-button" class="c-learn__sidebar-more-button--visible c-learn__sidebar-more-button c-learn__sidebar-nav-items">More <span style="vertical-align: middle; font-size: .8em;">&#9660</span></a>
+          <a id="bitcoin-markets-and-price--less-button" class="c-learn__sidebar-more-button c-learn__sidebar-nav-items">Less <span style='vertical-align: middle; font-size: .8em;'>&#9650</span></a>
+          
+      </div>
+      
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+        <div class="c-learn__sidebar-item">
+          <div class="c-learn__sidebar-item-header">
+            
+            <p class="c-learn__sidebar-title"><a name="sidebar-link" href="how-to-store-bitcoin/index.html">How to Store Bitcoin</a></p>
+          </div>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/bitcoin-wallets/"><a name="sidebar-link" href="bitcoin-wallets/index.html">Introduction to Bitcoin Wallets</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/how-do-bitcoin-wallets-work/"><a name="sidebar-link" href="how-do-bitcoin-wallets-work/index.html">How Bitcoin Wallets Work</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/what-is-bitcoin-cold-storage/"><a name="sidebar-link" href="what-is-bitcoin-cold-storage/index.html">What Is Bitcoin Cold Storage?</a></li>
+            </ul>
+          
+          
+          <div class="c-learn__sidebar-more" id="how-to-store-bitcoin-more">
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-to-get-started-self-custody/"><a name="sidebar-link" href="how-to-get-started-self-custody/index.html">How to Get Started with Bitcoin Self Custody</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-bitcoin-custody/"><a name="sidebar-link" href="what-is-bitcoin-custody/index.html">What Is Bitcoin Custody?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-privacy-tools/"><a name="sidebar-link" href="bitcoin-privacy-tools/index.html">Bitcoin Privacy Tools</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/choosing-a-bitcoin-wallet/"><a name="sidebar-link" href="choosing-a-bitcoin-wallet/index.html">Choosing a Bitcoin Wallet</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/traditional-account-vs-custodial-storage/"><a name="sidebar-link" href="traditional-account-vs-custodial-storage/index.html">Traditional Bank Account vs. Bitcoin Custodial Storage</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-happens-to-lost-bitcoin/"><a name="sidebar-link" href="what-happens-to-lost-bitcoin/index.html">What Happens to Lost Bitcoin?</a></li>
+              </ul>
+            
+            <p class="c-learn__sidebar-nav-items" style="font-size: .9rem;">&#x27A4<a href="how-to-store-bitcoin/index.html"  style="margin-left: 10px;">Explore more in How to Store Bitcoin</a></p>
+          </div>
+          <a id="how-to-store-bitcoin--more-button" class="c-learn__sidebar-more-button--visible c-learn__sidebar-more-button c-learn__sidebar-nav-items">More <span style="vertical-align: middle; font-size: .8em;">&#9660</span></a>
+          <a id="how-to-store-bitcoin--less-button" class="c-learn__sidebar-more-button c-learn__sidebar-nav-items">Less <span style='vertical-align: middle; font-size: .8em;'>&#9650</span></a>
+          
+      </div>
+      
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+      
+        <div class="c-learn__sidebar-item">
+          <div class="c-learn__sidebar-item-header">
+            
+            <p class="c-learn__sidebar-title"><a name="sidebar-link" href="bitcoin-mining/index.html">Bitcoin Mining</a></p>
+          </div>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/what-is-bitcoin-mining/"><a name="sidebar-link" href="what-is-bitcoin-mining/index.html">What Is Bitcoin Mining?</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/what-is-a-bitcoin-halving/"><a name="sidebar-link" href="what-is-a-bitcoin-halving/index.html">What Is a Bitcoin Halving?</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/what-will-happen-after-all-bitcoin-mined/"><a name="sidebar-link" href="what-will-happen-after-all-bitcoin-mined/index.html">What Will Happen After All Bitcoin Are Mined?</a></li>
+            </ul>
+          
+          
+          <div class="c-learn__sidebar-more" id="bitcoin-mining-more">
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/mining-rig/"><a name="sidebar-link" href="mining-rig/index.html">Buying a Bitcoin Mining Rig? What You Need to Know</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/is-bitcoin-mining-profitable/"><a name="sidebar-link" href="is-bitcoin-mining-profitable/index.html">Is Bitcoin Mining Profitable?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/why-does-bitcoin-mining-use-energy/"><a name="sidebar-link" href="why-does-bitcoin-mining-use-energy/index.html">Why Does Bitcoin Mining Use Energy?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/proof-of-work-pow-vs-pos-proof-of-stake/"><a name="sidebar-link" href="proof-of-work-pow-vs-pos-proof-of-stake/index.html">Proof-of-Work (PoW) vs Proof-of-Stake (PoS)</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-proof-of-work/"><a name="sidebar-link" href="what-is-proof-of-work/index.html">What Is Proof-of-Work?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-mining-taxes-regulation/"><a name="sidebar-link" href="bitcoin-mining-taxes-regulation/index.html">Bitcoin Mining Taxes and Regulation</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-bitcoin-mining-pools-work/"><a name="sidebar-link" href="how-bitcoin-mining-pools-work/index.html">How Bitcoin Mining Pools Work</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-hosted-mining/"><a name="sidebar-link" href="what-is-hosted-mining/index.html">What Is Hosted Mining?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-influence-do-bitcoin-miners-have-over-the-network/"><a name="sidebar-link" href="what-influence-do-bitcoin-miners-have-over-the-network/index.html">What Influence Do Bitcoin Miners Have Over the Network?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/is-bitcoin-mining-legal/"><a name="sidebar-link" href="is-bitcoin-mining-legal.1">Is Bitcoin Mining Legal?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-mev-does-it-apply-to-bitcoin-mining/"><a name="sidebar-link" href="what-is-mev-does-it-apply-to-bitcoin-mining/index.html">What Is MEV? Does it Apply to Bitcoin Mining?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/can-cloud-mining-be-trusted/"><a name="sidebar-link" href="can-cloud-mining-be-trusted/index.html">Can Cloud Mining Be Trusted?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/should-you-buy-miners-or-bitcoin/"><a name="sidebar-link" href="should-you-buy-miners-or-bitcoin/index.html">Should You Buy Bitcoin Miners or Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/mining-bitcoin-on-phone/"><a name="sidebar-link" href="mining-bitcoin-on-phone/index.html">Can I Mine Bitcoin on my Phone?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/is-a-usb-bitcoin-miner-profitable/"><a name="sidebar-link" href="is-a-usb-bitcoin-miner-profitable/index.html">Is a USB Bitcoin Miner Profitable?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoins-energy-consumption/"><a name="sidebar-link" href="bitcoins-energy-consumption/index.html">Bitcoin&#39;s Energy Consumption</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-long-does-it-take-to-mine-one-bitcoin/"><a name="sidebar-link" href="how-long-does-it-take-to-mine-one-bitcoin/index.html">How Long Does It Take to Mine One Bitcoin</a></li>
+              </ul>
+            
+            <p class="c-learn__sidebar-nav-items" style="font-size: .9rem;">&#x27A4<a href="bitcoin-mining/index.html"  style="margin-left: 10px;">Explore more in Bitcoin Mining</a></p>
+          </div>
+          <a id="bitcoin-mining--more-button" class="c-learn__sidebar-more-button--visible c-learn__sidebar-more-button c-learn__sidebar-nav-items">More <span style="vertical-align: middle; font-size: .8em;">&#9660</span></a>
+          <a id="bitcoin-mining--less-button" class="c-learn__sidebar-more-button c-learn__sidebar-nav-items">Less <span style='vertical-align: middle; font-size: .8em;'>&#9650</span></a>
+          
+      </div>
+      
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+        <div class="c-learn__sidebar-item">
+          <div class="c-learn__sidebar-item-header">
+            
+            <p class="c-learn__sidebar-title"><a name="sidebar-link" href="bitcoin-taxes-and-estate-planning/index.html">Bitcoin Taxes &amp; Estate Planning</a></p>
+          </div>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/bitcoin-tax-accounting/"><a name="sidebar-link" href="bitcoin-tax-accounting/index.html">Bitcoin Tax Accounting</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/investing-bitcoin-in-trust/"><a name="sidebar-link" href="investing-bitcoin-in-trust/index.html">Investing Bitcoin in a Trust</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/investing-bitcoin-as-a-family-office/"><a name="sidebar-link" href="investing-bitcoin-as-a-family-office/index.html">Investing in Bitcoin as a Family Office</a></li>
+            </ul>
+          
+          
+          <div class="c-learn__sidebar-more" id="bitcoin-taxes-and-estate-planning-more">
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/investing-bitcoin-retirement-accounts/"><a name="sidebar-link" href="investing-bitcoin-retirement-accounts/index.html">Investing Bitcoin in Retirement Accounts</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-happens-to-your-bitcoin-when-you-die/"><a name="sidebar-link" href="what-happens-to-your-bitcoin-when-you-die/index.html">What Happens to Your Bitcoin When You Die?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoin-for-institutional-treasuries/"><a name="sidebar-link" href="bitcoin-for-institutional-treasuries/index.html">Why Institutional Treasuries Should Consider Bitcoin</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/is-bitcoin-legal/"><a name="sidebar-link" href="is-bitcoin-legal/index.html">Is Bitcoin Legal?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/can-bitcoin-be-seized/"><a name="sidebar-link" href="can-bitcoin-be-seized/index.html">Can Bitcoin Be Seized?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-a-401k/"><a name="sidebar-link" href="what-is-a-401k/index.html">What Is a 401(k) Plan?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/roth-ira-vs-traditional-ira/"><a name="sidebar-link" href="roth-ira-vs-traditional-ira/index.html">Roth IRA vs. Traditional IRA</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/investing-bitcoin-in-llc/"><a name="sidebar-link" href="investing-bitcoin-in-llc/index.html">Investing Bitcoin in an LLC</a></li>
+              </ul>
+            
+            <p class="c-learn__sidebar-nav-items" style="font-size: .9rem;">&#x27A4<a href="bitcoin-taxes-and-estate-planning/index.html"  style="margin-left: 10px;">Explore more in Bitcoin Taxes and Estate Planning</a></p>
+          </div>
+          <a id="bitcoin-taxes-and-estate-planning--more-button" class="c-learn__sidebar-more-button--visible c-learn__sidebar-more-button c-learn__sidebar-nav-items">More <span style="vertical-align: middle; font-size: .8em;">&#9660</span></a>
+          <a id="bitcoin-taxes-and-estate-planning--less-button" class="c-learn__sidebar-more-button c-learn__sidebar-nav-items">Less <span style='vertical-align: middle; font-size: .8em;'>&#9650</span></a>
+          
+      </div>
+      
+    
+    
+    
+  
+    
+    
+      
+        <div class="c-learn__sidebar-item">
+          <div class="c-learn__sidebar-item-header">
+            
+            <p class="c-learn__sidebar-title"><a name="sidebar-link" href="bitcoin-and-blockchain-technology/index.html">Bitcoin &amp; Blockchain Technology</a></p>
+          </div>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/what-is-a-blockchain/"><a name="sidebar-link" href="what-is-a-blockchain/index.html">What Is a Blockchain?</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/what-is-a-bitcoin-node/"><a name="sidebar-link" href="what-is-a-bitcoin-node/index.html">What Is a Bitcoin Node?</a></li>
+            </ul>
+          
+            <ul class="c-link c-learn__sidebar-nav-items">
+              <li hugo-nav="/learn/what-is-the-lightning-network/"><a name="sidebar-link" href="what-is-the-lightning-network/index.html">What Is the Lightning Network?</a></li>
+            </ul>
+          
+          
+          <div class="c-learn__sidebar-more" id="bitcoin-and-blockchain-technology-more">
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/the-benefits-of-blockchain/"><a name="sidebar-link" href="the-benefits-of-blockchain/index.html">The Benefits of Blockchain</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-the-double-spend-problem/"><a name="sidebar-link" href="what-is-the-double-spend-problem/index.html">What Is the Double Spend Problem?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-to-read-bitcoin-data/"><a name="sidebar-link" href="how-to-read-bitcoin-data/index.html">How to Read Bitcoin Data</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-bitcoin-core/"><a name="sidebar-link" href="what-is-bitcoin-core/index.html">What Is Bitcoin Core?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-a-bitcoin-address/"><a name="sidebar-link" href="what-is-a-bitcoin-address/index.html">What Is a Bitcoin Address, and How Can You Get One?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-taro-in-bitcoin/"><a name="sidebar-link" href="what-is-taro-in-bitcoin/index.html">What Is Taro in Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-taproot/"><a name="sidebar-link" href="what-is-taproot/index.html">What Is Taproot and How Does It Benefit Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-to-run-a-bitcoin-node/"><a name="sidebar-link" href="how-to-run-a-bitcoin-node/index.html">How to Run a Bitcoin Node</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-are-bitcoin-forks/"><a name="sidebar-link" href="what-are-bitcoin-forks/index.html">What Are Bitcoin Forks?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-are-bitcoin-smart-contracts/"><a name="sidebar-link" href="what-are-bitcoin-smart-contracts/index.html">What Are Bitcoin Smart Contracts?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-are-partially-signed-bitcoin-transactions-psbts/"><a name="sidebar-link" href="what-are-partially-signed-bitcoin-transactions-psbts/index.html">What Are Partially Signed Bitcoin Transactions (PSBTs)?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-a-bitcoin-improvement-proposal-bip/"><a name="sidebar-link" href="what-is-a-bitcoin-improvement-proposal-bip/index.html">What Is a Bitcoin Improvement Proposal (BIP)?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/difference-between-bitcoin-and-blockchain/"><a name="sidebar-link" href="difference-between-bitcoin-and-blockchain/index.html">The Difference Between Bitcoin and Blockchain</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-are-schnorr-signatures/"><a name="sidebar-link" href="what-are-schnorr-signatures/index.html">What Do Schnorr Signatures Do for Bitcoin?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/bitcoins-utxo-model/"><a name="sidebar-link" href="bitcoins-utxo-model/index.html">Bitcoin&#39;s UTXO Model</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-segwit/"><a name="sidebar-link" href="what-is-segwit/index.html">What Is Segregated Witness (SegWit)?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-the-byzantine-generals-problem/"><a name="sidebar-link" href="what-is-the-byzantine-generals-problem/index.html">What Is the Byzantine Generals Problem?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/why-should-i-run-a-bitcoin-node/"><a name="sidebar-link" href="why-should-i-run-a-bitcoin-node/index.html">Why Should I Run a Bitcoin Node?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-bitcoin-solves-the-double-spend-problem/"><a name="sidebar-link" href="how-bitcoin-solves-the-double-spend-problem/index.html">How Bitcoin Solves the Double Spend Problem</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/pull-system-vs-push-system/"><a name="sidebar-link" href="pull-system-vs-push-system/index.html">Pull Systems vs. Push Systems</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/how-bitcoin-uses-cryptography/"><a name="sidebar-link" href="how-bitcoin-uses-cryptography/index.html">How Bitcoin Uses Cryptography</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/risks-of-cbdc/"><a name="sidebar-link" href="risks-of-cbdc/index.html">The Risks of Central Bank Digital Currencies (CBDC)</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/what-is-op-vault-in-bitcoin/"><a name="sidebar-link" href="what-is-op-vault-in-bitcoin.1">What Is OP_VAULT and How Will it Benefit Bitcoin Users?</a></li>
+              </ul>
+            
+              <ul class="c-link c-learn__sidebar-nav-items">
+                <li hugo-nav="/learn/lightning-payments-2025/"><a name="sidebar-link" href="lightning-payments-2025/index.html">Looking Ahead: Lightning Payments in 2025</a></li>
+              </ul>
+            
+            <p class="c-learn__sidebar-nav-items" style="font-size: .9rem;">&#x27A4<a href="bitcoin-and-blockchain-technology/index.html"  style="margin-left: 10px;">Explore more in Bitcoin and Blockchain Technology</a></p>
+          </div>
+          <a id="bitcoin-and-blockchain-technology--more-button" class="c-learn__sidebar-more-button--visible c-learn__sidebar-more-button c-learn__sidebar-nav-items">More <span style="vertical-align: middle; font-size: .8em;">&#9660</span></a>
+          <a id="bitcoin-and-blockchain-technology--less-button" class="c-learn__sidebar-more-button c-learn__sidebar-nav-items">Less <span style='vertical-align: middle; font-size: .8em;'>&#9650</span></a>
+          
+      </div>
+      
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  <div class="c-learn__sidebar-item">
+    <div class="c-learn__sidebar-item-header">
+      <p class="c-learn__sidebar-title"><a name="sidebar-link" href="terms/index.html">Glossary</a></p>
+    </div>
+      
+        <ul class="c-link c-learn__sidebar-nav-items">
+          <li hugo-nav="/learn/terms/l/lightning-network/"><a name="sidebar-link" href="terms/l/lightning-network">Lightning Network</a></li>
+        </ul>
+      
+        <ul class="c-link c-learn__sidebar-nav-items">
+          <li hugo-nav="/learn/terms/p/public-key/"><a name="sidebar-link" href="terms/p/public-key/index.html">Public Key</a></li>
+        </ul>
+      
+        <ul class="c-link c-learn__sidebar-nav-items">
+          <li hugo-nav="/learn/terms/s/segwit/"><a name="sidebar-link" href="terms/s/segwit/index.html">SegWit</a></li>
+        </ul>
+      
+      <p class="c-learn__sidebar-nav-items" style="font-size: .9rem;">&#x27A4<a name="sidebar-link" href="terms/index.html"  style="margin-left: 10px;">Explore more in Glossary</a></p>
+  </div>
+  <div class="c-learn__feature-widget">
+    <p class="c-learn__feature-widget-header">Build your Bitcoin wealth with River</p>
+    <div class="c-button--center">
+      <a name="sidebar-cta" href="../signup" class="c-button c-button-sm">Get Started</a>
+    </div>
+    <div class="c-learn__feature-widget-item">
+      <img src="images/icons/green-checkmark.svg" alt="green checkmark">
+      <p>No-fee recurring buys</p>
+    </div>
+    <div class="c-learn__feature-widget-item">
+      <img src="images/icons/green-checkmark.svg" alt="green checkmark">
+      <p>Bitcoin mining</p>
+    </div>
+    <div class="c-learn__feature-widget-item">
+      <img src="images/icons/green-checkmark.svg" alt="green checkmark">
+      <p>Phone support</p>
+    </div>
+</div>
+
+</div>
+    <div class="c-learn__main">
+      <div class="c-learn__content">
+        <ul class="c-breadcrumbs c-breadcrumbs-sm h-mb-0" style="margin-bottom: 30px;">
+          <li><a href="../learn.1">Learning Center</a></li>
+          <li><a href="bitcoin-and-blockchain-technology/index.html">Bitcoin &amp; Blockchain Technology</a></li>
+          <li class="c-breadcrumbs-is-active">What Is OP_VAULT and How Will It Benefit Bitcoin Users?</li>
+        </ul>
+        <h1>What Is OP_VAULT and How Will it Benefit Bitcoin Users?</h1>
+        <div class="c-table-of-contents">
+  <p class="c-table-of-contents-label">Table of Contents</p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="what-is-op-vault-in-bitcoin.1#what-is-op_vault">What Is OP_VAULT?</a></li>
+    <li><a href="what-is-op-vault-in-bitcoin.1#how-will-vaults-work-in-bitcoin">How Will Vaults Work in Bitcoin?</a></li>
+    <li><a href="what-is-op-vault-in-bitcoin.1#risks-of-op_vault">Risks of OP_VAULT</a></li>
+    <li><a href="what-is-op-vault-in-bitcoin.1#when-will-op_vault-be-live">When Will OP_VAULT Be Live?</a></li>
+  </ul>
+</nav>
+</div>
+
+        <div class="c-article">
+          <div class="c-highlight-box">
+  <div class="c-highlight-box-inner">
+    <p class="c-learn__featured-label-key-highlights c-learn__featured-label" style="margin:10px 0 0 0;">Key Highlights</p>
+    <div class="c-learn__key-highlights-list">
+      <ul>
+        
+          
+            <li>OP_VAULT is a proposed upgrade to Bitcoin which introduces several new features for Bitcoin self-custody that are beneficial to both individuals and businesses.</li>
+          
+        
+          
+            <li>OP_VAULT is a tool in Bitcoin’s script language that allows developers to create extra protections on the blockchain itself.</li>
+          
+        
+          
+            <li>Once implemented into Bitcoin’s software and wallets, users will be able to predefine a time delay and a recovery address to protect their bitcoin against theft.</li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<p>Have you ever worried about bitcoin self-custody? Many people trust a company like River to act as a custodian more than they trust themselves with the technology, despite knowing the importance of holding their keys.</p>
+<div class="c-highlight-bubble">
+
+  
+
+  
+  <img class="c-highlight-bubble-left" src="images/icons/lightbulb.svg" alt="">
+  <div class="c-highlight-bubble-right" style="background-color: #D2F7E5">
+    If OP_VAULT is added to Bitcoin, holding your private keys in self-custody will become significantly safer. For the first time in Bitcoin’s history, users will be able to intervene in case of a security breach.
+  </div>
+  
+</div>
+<h2 id="what-is-op_vault">What Is OP_VAULT?</h2>
+<p>OP_VAULT is a proposed vault mechanism for Bitcoin that would allow users to create additional protection for their bitcoin, on the blockchain itself. This mechanism is also known as a covenant: a set of conditions attached to a Bitcoin transaction that allows a user to determine when and where the bitcoin can be moved, including (importantly) in subsequent transactions.</p>
+<p><img src="images/articles/bitcoin-vault.png" alt="What is a Bitcoin vault"></p>
+<p>By using these conditions a user can create a digital vault that can restrict the bitcoin in it to only be spent to a certain address or to move only after a certain amount of time has passed. If a thief tries to steal the bitcoin by getting access to their <a href="terms/p/private-key/index.html">private keys</a> or <a href="../app.1">wallet</a>, the user would be able to move their funds to a predetermined recovery address before the bitcoin could be moved to an address owned by the thief.</p>
+<p>The “OP” part of the name stands for the <a href="terms/o/opcode/index.html">operation code</a> (“opcode”) that is used for this specific mechanism. An operation code is a basic command in a computer language that does a specific, predetermined thing. Bitcoin Core has approximately 200 of these opcodes. In the case of OP_VAULT, when a user wants to store their bitcoin in a digital vault, their wallet initiates this specific command to create one. In addition, an OP_UNVAULT code is also introduced with this proposal, which allows the user to withdraw all funds from the vault and close it.</p>
+<p>Since 2016, many proposals for vaults have been considered for Bitcoin, but there were always tradeoffs that made them unappealing. So far OP_VAULT has been very well received by the development community, with several suggestions to further improve upon it. We expect a high chance that it will go live in the future in some form.</p>
+<h2 id="how-will-vaults-work-in-bitcoin">How Will Vaults Work in Bitcoin?</h2>
+<p>Below we will explain what using a vault may look like for a regular bitcoin user. For a more in-depth understanding of the technical workings of a vault, the OP_VAULT BIP has <a href="https://github.com/jamesob/bips/blob/jamesob-23-02-opvault/bip-vaults.mediawiki" rel="noopener" 
+target="_blank">extensive documentation</a>.</p>
+<h3 id="bitcoin-vault-setup-experience">Bitcoin Vault Setup Experience</h3>
+<p>There will likely be many different ways to create vaults, depending on how developers implement them. Below we give an idea of what the setup experience of a vault may look like in practice (also called a vault opening):</p>
+<ol>
+<li>The user can see a spending and a saving account in their Bitcoin wallet interface, like in any bank account.</li>
+<li>When the user clicks on the savings account, the interface explains to them that money in this account can only be moved after a time period they set (to protect against theft) or it can be moved to a predetermined backup address at any time.</li>
+<li>When creating a new vault, the user is asked to specify or generate a backup address.</li>
+<li>The user is asked to determine the time delay and is likely offered a “safe” maximum time delay to de-risk locking their funds up for years or decades.</li>
+<li>The user is given a recovery key that they need to store in a secure location, separate from their wallet’s recovery method so that in the event of a security breach, the attacker does not gain access to both the wallet and the backup option.</li>
+<li>The user is asked how much bitcoin they want to send into the vault to start with.</li>
+<li>After confirming the above, the transaction to create the vault is sent. Once it is included in the blockchain, it can be used in various ways.</li>
+</ol>
+<p><img src="images/articles/bitcoin-vault-wallet.png" alt="Bitcoin vault setup experience in a wallet"></p>
+<p>Setting up a vault would take a few steps even in a simple interface. Fortunately in this proposal, it is not something a user would have to do frequently.</p>
+<h3 id="using-a-bitcoin-vault">Using a Bitcoin Vault</h3>
+<p>There are several ways to use a Bitcoin vault.</p>
+<p>Sending additional bitcoin to the vault will work just like any other <a href="how-does-a-bitcoin-transaction-work/index.html">bitcoin transaction</a></p>
+<p>Withdrawing bitcoin from the vault can work in two ways:</p>
+<ol>
+<li>The user will send a bitcoin transaction from the vault, and once the transaction receives one confirmation by being included in a block, the delay period for withdrawal begins. Once the delay period is completed, the bitcoin will be moved to the specified address. However, if the user instead intervenes and pulls their funds out of the vault to the predetermined recovery address, then the initial transaction is discarded.</li>
+<li>The user needs immediate access to their funds and chooses to instantly withdraw their bitcoin to the predetermined recovery address. This always closes the vault for safety reasons.</li>
+</ol>
+<p><img src="images/articles/OP_VAULT-technical-mechanism.png" alt="OP_VAULT">
+<div class="c-article-img__caption">
+    <p>
+    
+        OP_VAULT&#39;s technical mechanism<a name="article-image-caption" href="https://github.com/jamesob/bips/blob/jamesob-23-02-opvault/bip-vaults.mediawiki#user-content-Goals" target="_blank"> (BIP 345)</a>
+    
+    </p>
+ </div>
+</p>
+<h3 id="recovering-funds-from-a-bitcoin-vault">Recovering Funds from a Bitcoin Vault</h3>
+<p>If for any reason funds are attempted to be withdrawn from a vault without the authorization of the owner, they will be able to use their recovery key to move all funds from the vault to the predetermined recovery address before the time delay is up. In practice, this will likely be done through the settings of the vault in a wallet, and require extra confirmation to ensure this is what the user wants to do.</p>
+<p>In the event that the recovery key is lost, the user should immediately initiate the move to a new vault to get through the delay period sooner and minimize risk.</p>
+<h3 id="op_vault-is-also-helpful-for-businesses">OP_VAULT Is Also Helpful for Businesses</h3>
+<p>Businesses who hold Bitcoin typically already work with <a href="terms/m/multisig/index.html">multi-signature</a> wallets to protect themselves and ensure that no individual stakeholders can steal funds. Still, the risk of collusion between these stakeholders remains, where several could agree and instantly leave with the money.</p>
+<p>The addition of OP_VAULT would introduce an additional layer of protection. It would prevent any situations where several stakeholders collude and then immediately disappear with the money, as the other honest stakeholder(s) would be notified in time and would be able to contact law enforcement.</p>
+<p>There are also business opportunities, such as providing a service to automatically withdraw Bitcoin to the predetermined recovery address unless the user contacts the company. This relieves the burden from family or friends and provides additional options to people who may not deem them fit to carry this responsibility.</p>
+<p>Another opportunity is for businesses to provide a service to watch over their clients’ vaults to alert them of potential security breaches.</p>
+<h3 id="how-users-are-alerted-if-their-bitcoin-vault-is-breached">How Users Are Alerted if Their Bitcoin Vault Is Breached</h3>
+<p>An important caveat of using a bitcoin vault is that the vault itself will not warn a user by default. A service called a <a href="terms/w/watchtower/index.html">watchtower</a> needs to watch the blockchain and notify the user if a transaction is initiated from the vault.</p>
+<p><img src="images/articles/bitcoin-watchtower.png" alt="Bitcoin vault watchtower"></p>
+<p>There will be a range of different watchtower models on a spectrum of trust and involvement:</p>
+<ul>
+<li>Most involved: The businesses we mentioned above that could initiate the recovery process on top of just monitoring for users.</li>
+<li>Least involved: A service that receives a range of addresses to watch, without knowing which exact one belongs to the user. The user is responsible for ignoring false positive warnings.</li>
+</ul>
+<p>To be extra safe, a user would want to be connected to multiple watchtowers to protect against any single watchtower malfunctioning or going offline.</p>
+<h2 id="risks-of-op_vault">Risks of OP_VAULT</h2>
+<h3 id="censorship-and-fungibility">Censorship and Fungibility</h3>
+<p>A technical risk of the proposal is that like with any technology or upgrade to Bitcoin, users could find ways to use it for “bad” purposes.</p>
+<p>In the case of vaults, some concerns have been shared around these previously mentioned covenants. The ability to restrict how certain bitcoin can be spent could reduce bitcoins <a href="terms/f/fungibility/index.html">fungibility</a> (how interchangeable each bitcoin is), if people started adding other restrictions at large scale. Concerns have also been shared about censorship and government influence in general on who is allowed to own and transact in Bitcoin.</p>
+<p>An important note here is that these risks are <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-July/019209.html" rel="noopener" 
+target="_blank">also present with already existing technology</a> in Bitcoin, such as <a href="terms/m/multisig/index.html">multisig</a>, so it is unclear whether vaults would negatively impact the network in a significant way.</p>
+<p>We expect a lively ongoing discussion around the risks and tradeoffs that covenants may introduce. The value of a non-custodial way to recover your funds in case of a security breach can not be overstated, but at the same time all potential drawbacks will be carefully considered.</p>
+<h3 id="physical-risks-for-vault-users">Physical Risks for Vault Users</h3>
+<p>Beyond technical risks, a criticism of vault constructions is that they create an incentive for a physical attacker to harm the owner of the bitcoin so that they are unable to move the bitcoin to the recovery address in time.</p>
+<p>If you are relatively new to Bitcoin, this may seem an extreme and shocking thing to think about. It is important to consider the implications of a system in which you are the true owner of your money, and what that means for your safety and those close to you. Freedom has tradeoffs.</p>
+<p>The above risk is not something we expect any technical implementation of a vault to solve, as vaults are primarily intended to protect against digital attacks. While at first glance it sounds like a major risk, in reality, best practices for vault use would likely emerge that should deter attackers.</p>
+<h3 id="protection-against-physical-attacks-on-vault-users">Protection Against Physical Attacks on Vault Users</h3>
+<ol>
+<li>
+<p>Rather than making the recovery process dependent on the original owner, it is likely that owners of large amounts of bitcoin will set up multi-signature constructions that would also allow other trusted parties to initiate a recovery transaction from their vault.</p>
+</li>
+<li>
+<p>Another frequently discussed option is that of a “dead man’s switch,” where the owner needs to authorize withdrawal from the vault. If they don’t do this before the delay period is up, the funds will be automatically moved to the recovery address.</p>
+</li>
+</ol>
+<p>These practices disincentivize attackers from even attempting to steal from vault users. Attackers would need to take the risks associated with gaining access to all of the keys needed to steal the bitcoin, and then they would also need to commit a crime that could put them in jail for life, all while risking that the bitcoin would still end up being recovered by a third party anyway.</p>
+<p>To read more about these discussions, see <a href="https://github.com/bitcoin/bips/pull/1421#pullrequestreview-1321173414" rel="noopener" 
+target="_blank">the comment section</a> of the improvement proposal where developers go over various scenarios.</p>
+<h2 id="when-will-op_vault-be-live">When Will OP_VAULT Be Live?</h2>
+<p>Before users can start securing their bitcoin in vaults, a few technical milestones still need to happen.</p>
+<p>First, the technical tool which enables vaults to exist, OP_VAULT, needs to be implemented into Bitcoin’s software through a <a href="terms/s/soft-fork/index.html">soft fork</a>. OP_VAULT <a href="https://twitter.com/jamesob/status/1631473848867516417" rel="noopener" 
+target="_blank">received its Bitcoin Improvement Proposal number</a> (345) in March 2023. It will undergo rigorous testing and feedback from the wider Bitcoin development community.</p>
+<p>Next, this software change needs to be widely adopted by nodes in the network, so that the code goes live and its functionality is acknowledged by the vast majority of the network.</p>
+<p>Once that is done, the vault solutions that wallet developers have created for their respective wallets will be usable. We expect many wallet developers to start as early as possible, to attract users who want access to this feature as soon as possible. Waiting months or years could cause a loss of users.</p>
+<p>It is worth mentioning that different terminology will likely be used in wallets to not confuse users about the feature. We will continue to update this article when new major developments happen.</p>
+<p>A special thank you to <a href="https://twitter.com/jamesob/" rel="noopener" 
+target="_blank">James O&#39;Beirne</a>, the author of the proposal, for reviewing the article.
+If you’re interested in transacting on Lightning through River, you can <a href="../signup">sign up for a River account</a>. To stay up-to-date on our latest research, <a href="../blog" rel="noopener" 
+target="_blank">subscribe to our newsletter</a>.</p>
+
+        </div>
+      </div>
+      <div class="c-learn__article-feature-widget">
+    <div class="c-learn__article-feature-widget-content">
+      <div class="c-learn__article-feature-widget-header">
+        <p>Build your Bitcoin wealth with River</p>
+      </div>
+      <div class="c-learn__article-feature-widget-item">
+        <img src="images/icons/green-checkmark.svg" alt="green checkmark">
+        <p>No-fee recurring buys</p>
+      </div>
+      <div class="c-learn__article-feature-widget-item">
+        <img src="images/icons/green-checkmark.svg" alt="green checkmark">
+        <p>Bitcoin mining</p>
+      </div>
+      <div class="c-learn__article-feature-widget-item">
+        <img src="images/icons/green-checkmark.svg" alt="green checkmark">
+        <p>Phone support</p>
+      </div>
+    </div>  
+    <div class="c-button--center">
+      <a name="article-cta" href="../signup" class="c-button c-button-sm c-learn__article-feature-widget-start">Get Started</a>
+    </div>
+</div>
+
+      <hr class="hr-thin">
+      
+<div class="c-learn__related-articles-wrapper">
+    <div class="c-learn__related-articles-title c-terms__glossary-related-title">
+        Related Articles
+    </div>
+    <div class="c-learn__content-card-wrapper ">
+        
+        
+        
+            <div class="c-learn__content-card">
+                <div class="c-learn__content-card-img-wrapper">
+                    <a name="related_article-image" href="what-is-bitcoin-cold-storage/index.html"><img src="images/heroes/cold-storage.png" alt="Hero Image for Article: What Is Bitcoin Cold Storage?"/></a>
+                </div>
+                <p class="c-link c-learn__content-card-title">
+                    <a name="related_article" href="what-is-bitcoin-cold-storage/index.html">What Is Bitcoin Cold Storage?</a>
+                </p>
+                <a name="related_article-description" id="What Is Bitcoin Cold Storage?" href="what-is-bitcoin-cold-storage/index.html">
+                    <p class="c-learn__content-card-subtitle">
+                        Cold storage wallets isolate bitcoin private keys from the internet. Cold storage offers superior security at the cost of lower convenience.
+                    </p>
+                </a>
+            </div>
+        
+        
+        
+        
+            <div class="c-learn__content-card">
+                <div class="c-learn__content-card-img-wrapper">
+                    <a name="related_article-image" href="what-is-a-bitcoin-improvement-proposal-bip/index.html"><img src="images/heroes/bip.jpg" alt="Hero Image for Article: What Is a Bitcoin Improvement Proposal (BIP)?"/></a>
+                </div>
+                <p class="c-link c-learn__content-card-title">
+                    <a name="related_article" href="what-is-a-bitcoin-improvement-proposal-bip/index.html">What Is a Bitcoin Improvement Proposal (BIP)?</a>
+                </p>
+                <a name="related_article-description" id="What Is a Bitcoin Improvement Proposal (BIP)?" href="what-is-a-bitcoin-improvement-proposal-bip/index.html">
+                    <p class="c-learn__content-card-subtitle">
+                        A Bitcoin Improvement Proposal (BIP) is a formal proposal to change Bitcoin. The BIP process organizes the Bitcoin community in the absence of a centralized leader. BIPs can propose changes to Bitcoin&#39;s consensus layer, community standards, or the development process.
+                    </p>
+                </a>
+            </div>
+        
+        
+        
+        
+            <div class="c-learn__content-card">
+                <div class="c-learn__content-card-img-wrapper">
+                    <a name="related_article-image" href="what-are-bitcoin-smart-contracts/index.html"><img src="images/heroes/smart-contracts.png" alt="Hero Image for Article: What Are Bitcoin Smart Contracts?"/></a>
+                </div>
+                <p class="c-link c-learn__content-card-title">
+                    <a name="related_article" href="what-are-bitcoin-smart-contracts/index.html">What Are Bitcoin Smart Contracts?</a>
+                </p>
+                <a name="related_article-description" id="What Are Bitcoin Smart Contracts?" href="what-are-bitcoin-smart-contracts/index.html">
+                    <p class="c-learn__content-card-subtitle">
+                         A smart contract is a digital agreement that is automatically executed and based on predefined criteria. Bitcoin’s scripting language enables powerful smart contracting features and additional smart contracts can be enabled on layers on top of Bitcoin.
+                    </p>
+                </a>
+            </div>
+        
+        
+        
+    </div>
+</div>
+
+      
+
+<hr class="hr-thin"></hr>
+<div class="c-terms__glossary-related">
+  <div class="c-terms__glossary-related-title">Related Terms</div>
+  
+  <div class="c-terms__glossary-related-term">
+    
+    
+    
+      
+        
+        
+        <div class="c-link c-terms__glossary-related-term-title">
+          <a name="related_term" href="terms/o/opcode/index.html">Opcode</a>
+        </div>
+        <div class="c-terms__glossary-related-term-subtitle">
+          <a name="related_term-description" id="Opcode" href="terms/o/opcode/index.html">An operation code, or opcode, is a basic command of some computer languages. Bitcoin’s scripting language, called Script, has its own set of opcodes.</a>
+          <div class="c-terms__glossary-related-term-subtitle-learn-more">
+            <a name="related_term-description" id="Opcode" href="terms/o/opcode/index.html">Learn more</a>
+          </div>
+        </div>
+        
+    
+  </div>
+  
+  <div class="c-terms__glossary-related-term">
+    
+    
+    
+      
+        
+        
+        <div class="c-link c-terms__glossary-related-term-title">
+          <a name="related_term" href="terms/b/bitcoin-improvement-proposal-bip/index.html">Bitcoin Improvement Proposal (BIP)</a>
+        </div>
+        <div class="c-terms__glossary-related-term-subtitle">
+          <a name="related_term-description" id="Bitcoin Improvement Proposal (BIP)" href="terms/b/bitcoin-improvement-proposal-bip/index.html">A Bitcoin Improvement Proposal (BIP) is a formal proposal to change Bitcoin. Upgrades, security improvements, industry standards, and more all begin as BIPs.</a>
+          <div class="c-terms__glossary-related-term-subtitle-learn-more">
+            <a name="related_term-description" id="Bitcoin Improvement Proposal (BIP)" href="terms/b/bitcoin-improvement-proposal-bip/index.html">Learn more</a>
+          </div>
+        </div>
+        
+    
+  </div>
+  
+  <div class="c-terms__glossary-related-term">
+    
+    
+    
+      
+        
+        
+        <div class="c-link c-terms__glossary-related-term-title">
+          <a name="related_term" href="terms/w/wallet-bitcoin/index.html">Wallet</a>
+        </div>
+        <div class="c-terms__glossary-related-term-subtitle">
+          <a name="related_term-description" id="Wallet" href="terms/w/wallet-bitcoin/index.html">A wallet is a piece of software which generates and stores public and private keys, allowing users to send, receive, and store bitcoin.</a>
+          <div class="c-terms__glossary-related-term-subtitle-learn-more">
+            <a name="related_term-description" id="Wallet" href="terms/w/wallet-bitcoin/index.html">Learn more</a>
+          </div>
+        </div>
+        
+    
+  </div>
+  
+  <div class="c-terms__glossary-related-explore">
+    <a name="related_term" href="terms/index.html">Explore More Terminology <span style="font-size: 18px">&#x203A</span></a>
+  </div>
+</div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+    <div class="c-learn">
+      <div class="c-learn-subscribe__form c-learn-subscribe__form--footer js-subscribeFormContainer">
+  <div class="c-learn__sidebar-title">River Intelligence</div>
+  <p>Sign up for our curated weekly newsletter delivering exclusive market insights to your inbox.</p>
+  <form action="https://api.hsforms.com/submissions/v3/integration/submit/5916512/7c0adb48-e7af-473e-a382-8cc534388d22", method="post" class="js-subscribeForm">
+    <div class="c-learn-subscribe__form-fields">
+      <input type="email" placeholder="Email Address" name="email" required>
+      <input type="submit" value="Subscribe" class="c-button  c-learn-subscribe__form--button">
+    </div>
+  </form>
+</div>
+    </div>
+  </main>
+  <footer class="c-public-footer">
+  <div class="c-public-footer__inner">
+    <div class="c-public-footer__column c-public-footer__left">
+			<div class="c-public-footer__info">
+      	<div class="c-public-footer__logo h-mb-2">
+			<img src="images/logo/logo.svg" alt="River Logo">
+      	</div>
+      	<div class="c-public-footer__copyright h-text-gray-dark">
+      	  <p>NMLS ID#1906809</p>
+		  <p>© 2023 River Financial Inc. All rights reserved.</p>
+				</div>
+			</div>
+      <div class="c-public-footer__app">
+        <a name="footer-app-image" href="https://apps.apple.com/us/app/river-buy-bitcoin-securely/id1536176542" target="_blank">
+			<img src="images/logo/app.svg" alt="River iOS app" />
+        </a>
+			</div>
+		</div>
+
+		<div class="c-public-footer__column c-public-footer__grid-wrapper">
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Product</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					
+						<a name="footer-product" class="c-link" href="../signup">Sign Up</a>
+					
+						<a name="footer-product" class="c-link" href="../buy-bitcoin">Buy Bitcoin</a>
+					
+						<a name="footer-product" class="c-link" href="../security">Security</a>
+					
+						<a name="footer-product" class="c-link" href="../bitcoin-price">Bitcoin Price</a>
+					
+						<a name="footer-product" class="c-link" href="../private-client">Private Client</a>
+					
+						<a name="footer-product" class="c-link" href="../institutions">Business</a>
+					
+						<a name="footer-product" class="c-link" href="../inheritance">Bitcoin Inheritance</a>
+					
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Company</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					
+      				  
+      				    <a name="footer-company" class="c-link" href="../about">About</a>
+      				  
+      				
+      				  
+      				    <a name="footer-company" class="c-link" href="https://rls.dev">Developers</a>
+      				  
+      				
+      				  
+      				    <a name="footer-company" class="c-link" href="../careers" target="_blank">Careers</a>
+      				  
+      				
+      				  
+      				    <a name="footer-company" class="c-link" href="https://blog.river.com/tag/newsroom/">Newsroom</a>
+      				  
+      				
+      				  
+      				    <a name="footer-company" class="c-link" href="https://support.river.com/kb/guide/en/which-jurisdictions-are-currently-supported-by-river-9CbdNONz91/Steps/2093646">Areas of Availability</a>
+      				  
+      				
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Support</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					
+						
+							<a name="footer-site-help" class="c-link" href="https://support.river.com">Help Center</a>
+						
+					
+						
+							<a name="footer-support" class="c-link" href="../support">Contact Support</a>
+						
+					
+						
+							<a name="footer-site-status" class="c-link" href="https://status.river.com" target="_blank">Site Status</a>
+						
+					
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Social</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					
+						<a name="footer-social-Twitter" class="c-link" href="https://twitter.com/river" target="_blank" >
+							<img class="c-public-footer__social-icon" src="images/icons/twitter.svg" alt="Social media icon for Twitter"/>
+							Twitter
+						</a>
+					
+						<a name="footer-social-LinkedIn" class="c-link" href="https://www.linkedin.com/company/riverfinancial" target="_blank" >
+							<img class="c-public-footer__social-icon" src="images/icons/linkedin.svg" alt="Social media icon for LinkedIn"/>
+							LinkedIn
+						</a>
+					
+						<a name="footer-social-GitHub" class="c-link" href="https://www.github.com/RiverFinancial" target="_blank" >
+							<img class="c-public-footer__social-icon" src="images/icons/github.svg" alt="Social media icon for GitHub"/>
+							GitHub
+						</a>
+					
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Learn</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					
+						<a name="footer-learn" class="c-link" href="../learn.1">Learning Center</a>
+					
+						<a name="footer-learn" class="c-link" href="bitcoin-basics/index.html">Bitcoin Basics</a>
+					
+						<a name="footer-learn" class="c-link" href="bitcoin-markets-and-price/index.html">Bitcoin Markets</a>
+					
+						<a name="footer-learn" class="c-link" href="bitcoin-and-blockchain-technology/index.html">Blockchain Technology</a>
+					
+						<a name="footer-learn" class="c-link" href="terms/index.html">Glossary</a>
+					
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Featured Articles</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					
+						<a name="footer-learn" class="c-link" href="what-is-bitcoin/index.html">What Is Bitcoin?</a>
+					
+						<a name="footer-learn" class="c-link" href="how-to-buy-bitcoin.1">How to Buy Bitcoin</a>
+					
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>River Intelligence</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					
+						<a name="footer-intelligence" class="c-link" href="https://blog.river.com/tag/market-insights/">Market Insights</a>
+					
+						<a name="footer-intelligence" class="c-link" href="https://blog.river.com/tag/company">Company Announcements</a>
+					
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Legal</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					
+						<a name="footer-legal" class="c-link" href="../legal/licenses">Licenses &amp; Disclosures</a>
+					
+						<a name="footer-legal" class="c-link" href="../legal/privacy">Privacy Policy</a>
+					
+						<a name="footer-legal" class="c-link" href="../legal/terms">Terms of Service</a>
+					
+				</div>
+			</div>
+		</div>
+  </div>
+</footer>
+
+</body>
+</html>

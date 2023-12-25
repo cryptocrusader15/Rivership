@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>River | Investment Portfolio</title>
+    <meta name="description" content="Easily buy Bitcoin in minutes. Zero fees on recurring purchases. Invest in Bitcoin with confidence with world-class security.">
+
+    <meta property="og:image" content="https://river.com/images/social/river-preview-1d7f875b692a43a2d831ac6f5169ee0e.webp">
+    <meta property="og:title" content="River | Buy Bitcoin Instantly">
+    <meta property="og:description" content="Easily buy Bitcoin in minutes. Zero fees on recurring purchases. Invest in Bitcoin with confidence with world-class security.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://river.com/">
+    <meta property="og:site_name" content="River">
+    <meta name="apple-itunes-app" content="app-id=1536176542">
+
+    <link rel="preload" as="style" href="css/portfolio.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+   
+
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="favicons/manifest-632dd6e1af167f4453962ccc33097eb0.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    
+    <link rel="icon" type="image/x-icon" href="https://river.com/favicon-cc5379015391eb450b0dcab60a8a6a8f.ico">
+
+
+</head>
+<body id="app">
+  <nav role="navigation">
+    <div class="fixed left-0 right-0 z-10 max-h-screen overflow-y-scroll lg:overflow-y-visible js-nav-wrapper">
+      <div class="c-nav-content relative flex flex-wrap items-center justify-between px-6 py-4 mx-auto text-base sm:px-10 max-w-screen-2xl xl:px-20">
+        <a href="app.html">
+          <img class="h[38px]" src="images/logo/logo-88256519050c5e84fcbd2120a81b2097.svg" alt="River Logo">
+        </a>
+  <div class="container">
+    <header>
+      <div class="logo">BTC Investment Portfolio</div>
+      <nav>
+          <ul>
+              <li><a href="deposit.html">DEPOSIT</a></li>
+              <li><a href="/users/signup">SIGNUP</a></li>
+              <li><a href="/users/login">LOGIN</a></li>
+              <li><a href="buy-bitcoin.html">BUY BTC HERE</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <section id="investment-plans" class="section">
+      <h2>Investment Plans</h2>
+      <div class="investment-plan">
+          <h3>Starter Plan</h3>
+          <p>Invest in BTC and get 5% profit returns weekely.</p>
+      </div>
+      <div class="investment-plan">
+          <h3>Advanced Plan</h3>
+          <p>Higher investment in BTC with 25% profit returns monthly.</p>
+      </div>
+      <div class="investment-plan">
+          <h3>Premium Plan</h3>
+          <p>Premium BTC investment with 320% profit returns yearly.</p>
+      </div>
+    </section>
+ 
+  </section>
+      <div class="content mt-8 text-center">
+        <div class="buttons">
+          <button id="generateButton" onclick="generateWallet()" class="bg-blue-500 text-white py-2 px-4 rounded">Generate Your Wallet Address</button>
+          <br>
+          <br>
+          <div id="timer" class="mt-4 text-white"></div>
+      </div>
+          <br>
+          <button id="copyButton" onclick="copyToClipboard()" class="bg-green-500 text-white py-2 px-4 rounded">Copy Your Address</button>
+        </div>
+    
+        <div id="walletAddress" class="wallet-address mt-8 text-white"></div>
+      </div>
+    
+      <div class="bitcoin-balance-box">
+        <h2 class="text-xl font-bold">Bitcoin Balance: <span id="bitcoinBalance">0</span> BTC</h2>
+      </div>
+    
+      <button id="transferButton" onclick="transferBitcoin()" class="bg-yellow-500 text-white py-2 px-4 rounded mt-4">Withdraw Your Bitcoin</button>
+    </div>
+    <link rel="preload" as="style" href="css/deposit.css">
+    <link rel="stylesheet" href="css/deposit.css">
+      <script src="js/deposit.js"></script>
+    </section>
+
+  <section id="market" class="section">
+      <h2>Market Data</h2>
+      <canvas id="priceChart" width="800" height="400"></canvas>
+  </section>
+
+  <section id="transactions" class="section">
+    <h2>Transaction History</h2>
+    <div id="transaction-container"></div>
+
+      <h2>Transaction History</h2>
+      <div class="transaction">
+        <p class="transaction-type">Deposit</p>
+        <p class="transaction-details">Deposited 0.05 BTC</p>
+        <p class="transaction-date">2023-01-15 10:30 AM</p>
+    </div>
+    <div class="transaction">
+        <p class="transaction-type">Withdrawal</p>
+        <p class="transaction-details">Withdrawn 0.02 BTC</p>
+        <p class="transaction-date">2023-02-05 03:45 PM</p>
+    </div>
+  </section>
+
+    <script src="js/portfolio.js"></script>
+</body>
+</html>

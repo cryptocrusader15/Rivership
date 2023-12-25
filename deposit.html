@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>River | Deposit Page</title>
+  <meta name="description" content="Easily buy Bitcoin in minutes. Zero fees on recurring purchases. Invest in Bitcoin with confidence with world-class security.">
+  <meta property="og:image" content="https://river.com/images/social/river-preview-1d7f875b692a43a2d831ac6f5169ee0e.webp">
+  <meta property="og:title" content="River | Buy Bitcoin Instantly">
+  <meta property="og:description" content="Easily buy Bitcoin in minutes. Zero fees on recurring purchases. Invest in Bitcoin with confidence with world-class security.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://river.com/">
+  <meta property="og:site_name" content="River">
+  <meta name="apple-itunes-app" content="app-id=1536176542">
+  <link rel="preload" as="style" href="css/deposit.css">
+  <link rel="stylesheet" href="css/deposit.css">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="manifest" href="favicons/manifest-632dd6e1af167f4453962ccc33097eb0.json">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <link rel="icon" type="image/x-icon" href="https://river.com/favicon-cc5379015391eb450b0dcab60a8a6a8f.ico">
+
+
+</head>
+<body id="app">
+  <nav role="navigation"></nav>
+  <div class="fixed left-0 right-0 z-10 max-h-screen overflow-y-scroll lg:overflow-y-visible js-nav-wrapper">
+    <div class="c-nav-content relative flex flex-wrap items-center justify-start px-6 py-4 mx-auto text-base sm:px-10 max-w-screen-2xl xl:px-20">
+      <a href="app.html">
+        <img class="h-12" src="images/logo/logo-88256519050c5e84fcbd2120a81b2097.svg" alt="River Logo">
+      </a>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-content text-center mt-8">
+      <h1 class="text-3xl font-bold">My Wallet Address</h1>
+    </div>
+  </header>
+
+  <div class="content mt-8 text-center">
+    <div class="buttons">
+      <button id="generateButton" onclick="generateWallet()" class="bg-blue-500 text-white py-2 px-4 rounded">Generate Your Wallet Address</button>
+      <br>
+      <br>
+      <div id="timer" class="mt-4 text-white"></div>
+  </div>
+      <br>
+      <button id="copyButton" onclick="copyToClipboard()" class="bg-green-500 text-white py-2 px-4 rounded">Copy Your Address</button>
+    </div>
+
+    <div id="walletAddress" class="wallet-address mt-8 text-white"></div>
+  </div>
+
+  <div class="bitcoin-balance-box">
+    <h2 class="text-xl font-bold">Bitcoin Balance: <span id="bitcoinBalance">0</span> BTC</h2>
+  </div>
+
+  <button id="transferButton" onclick="transferBitcoin()" class="bg-yellow-500 text-white py-2 px-4 rounded mt-4">Transfer Bitcoin</button>
+</div>
+
+  <script src="js/deposit.js"></script>
+</body>
+</html>

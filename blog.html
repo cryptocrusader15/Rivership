@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>River Intelligence – Bitcoin Research &amp; Analysis | River Financial</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-itunes-app" content="app-id=1536176542">
+
+    <link rel="stylesheet" type="text/css" href="https://blog.river.com/assets/built/screen.css?v=26a0c7c141" />
+    <script type="text/javascript">
+        /* -----------------------------------------------------------------------------
+         * Exported functions
+         */
+
+         function initSubscribe() {
+            const forms = document.querySelectorAll(".js-subscribeForm");
+            forms.forEach((form) => {
+              form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                submitForm(form);
+              });
+            });
+          }
+
+        /* -----------------------------------------------------------------------------
+         * Local Functions
+         */
+
+        function transitionForm(form) {
+          let parent = form.closest(".js-subscribeFormContainer");
+          parent.innerHTML =
+            '<p><b>Confirm Your Subscription</b></p><p class="c-learn-subscribe-text">Please check your email address to confirm your subscription.</p><div class="c-learn-subscribed-checkmark"><img src="https://f.hubspotusercontent10.net/hubfs/5916512/subscribed-checkmark.svg" alt="Success" /><p style="display: inline-block; color: #e2be79;">Almost There!</p></div>';
+        }
+
+        function submitForm(form) {
+          var submitButton = form.querySelector('input[type="submit"]');
+          submitButton.disabled = true;
+
+          var xhr = new XMLHttpRequest();
+
+          xhr.open(form.method, form.action);
+          xhr.setRequestHeader("Accept", "application/json; charset=utf-8");
+          xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+
+          xhr.onloadend = function (response) {
+            if (response.target.status === 400) {
+              alert("Something went wrong");
+              submitButton.disabled = false;
+            } else if (response.target.status === 200) {
+              transitionForm(form);
+            }
+          };
+
+          xhr.send(
+            JSON.stringify({
+              fields: [
+                {
+                  name: "email",
+                  value: form.elements.email.value,
+                },
+              ],
+            })
+          );
+        }
+
+        /* -----------------------------------------------------------------------------
+         * Exported functions
+         */
+
+        
+        function initDropDown() {
+            attachDropDownBehavior({
+              hitSelector: ".js-nav",
+              revealSelector: ".c-nav-marketing__dropdown",
+            });
+          }
+        /** ----------------------------------------------------------------------------
+        * Reusable method to easily add / remove visible class on click for dropdowns.
+        * Borrowed from alto_web:nav_product.ts https://gitlab.knox.mx/alto/alto/-/blob/98642ae0d5f40848b12ffc7c62167c187b6f2355/apps/alto_web/assets/js/utils/nav_product.ts#L40
+        */
+        function attachDropDownBehavior({ hitSelector, revealSelector }) {
+          const hits = document.querySelectorAll(hitSelector);
+          const reveals = document.querySelectorAll(revealSelector);
+
+          if (hits.length !== reveals.length)
+            throw new Error(
+              "incorrect dropdown setup, you must have an element to show for every reveal element"
+            );
+          hits.forEach((hit, idx) => {
+            let isVisible = false;
+            const reveal = reveals[idx];
+
+            function show(e) {
+              e.stopPropagation();
+              hit.classList.add("c-nav-marketing__open");
+              reveal?.classList.add("c-nav-marketing__show");
+              isVisible = true;
+            }
+            function hide(e) {
+              // we don't want to stop propagation here otherwise phoenix html js can't catch this and
+              // turn normal http request to delete method for logging out user request
+              hit.classList.remove("c-nav-marketing__open");
+              reveal?.classList.remove("c-nav-marketing__show");
+              isVisible = false;
+            }
+            function handleClick(e) {
+              isVisible ? hide(e) : show(e);
+            }
+
+            hit?.addEventListener("click", handleClick);
+            reveal && document.addEventListener("click", hide);
+          });
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            initDropDown();
+            initSubscribe();
+        });
+    </script>
+    <meta name="description" content="The River Intelligence Unit is the research division of River. Exclusive analysis and insights on Bitcoin markets and monetary policy.">
+    <link rel="icon" href="https://blog.river.com/content/images/size/w256h256/2023/07/Mark-Gold--3--1.png" type="image/png">
+    <link rel="canonical" href="blog">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="next" href="https://blog.river.com/page/2/">
+    
+    <meta property="og:site_name" content="River Intelligence – Bitcoin Research &amp; Analysis">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="River Intelligence – Bitcoin Research &amp; Analysis">
+    <meta property="og:description" content="The River Intelligence Unit is the research division of River. Exclusive analysis and insights on Bitcoin markets and monetary policy.">
+    <meta property="og:url" content="https://blog.river.com/">
+    <meta property="og:image" content="https://blog.river.com/content/images/2023/07/intelligence-1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="River Intelligence – Bitcoin Research &amp; Analysis">
+    <meta name="twitter:description" content="The River Intelligence Unit is the research division of River. Exclusive analysis and insights on Bitcoin markets and monetary policy.">
+    <meta name="twitter:url" content="https://blog.river.com/">
+    <meta name="twitter:image" content="https://blog.river.com/content/images/2023/07/intelligence.png">
+    <meta name="twitter:site" content="@river">
+    <meta property="og:image:width" content="2000">
+    <meta property="og:image:height" content="637">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "publisher": {
+        "@type": "Organization",
+        "name": "River Intelligence – Bitcoin Research &amp; Analysis",
+        "url": "https://blog.river.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://blog.river.com/content/images/2023/07/Full-Color-White--17--4.png"
+        }
+    },
+    "url": "https://blog.river.com/",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://blog.river.com/content/images/2023/07/intelligence-2.png",
+        "width": 2000,
+        "height": 637
+    },
+    "mainEntityOfPage": "https://blog.river.com/",
+    "description": "The River Intelligence Unit is the research division of River. Exclusive analysis and insights on Bitcoin markets and monetary policy."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 5.72">
+    <link rel="alternate" type="application/rss+xml" title="River Intelligence – Bitcoin Research &amp; Analysis" href="https://blog.river.com/rss/">
+    
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="d7d223fa5a92269618aaf40f3a" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://river.ghost.io/" crossorigin="anonymous"></script>
+    
+    <link href="https://blog.river.com/webmentions/receive/" rel="webmention">
+    <script defer src="https://blog.river.com/public/cards.min.js?v=26a0c7c141"></script>
+    <link rel="stylesheet" type="text/css" href="https://blog.river.com/public/cards.min.css?v=26a0c7c141">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VYX9CWNXM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0VYX9CWNXM');
+</script><style>:root {--ghost-accent-color: #15171A;}</style>
+
+</head>
+<body class="home-template">
+
+    <div class="site-wrapper">
+
+        
+<nav class="site-nav">
+    <div class="site-nav-wrapper">
+        <div class="site-nav-left">
+            <a class="site-nav-logo" href="app.1"><img src="https://blog.river.com/content/images/2023/07/Full-Color-White--17--4.png" alt="River Intelligence – Bitcoin Research &amp; Analysis" /></a>
+            <ul class="site-nav-items">
+                <a class="site-nav-link" href="https://river.com/about/">About</a>
+                <a class="site-nav-link" href="https://river.com/security/">Security</a>
+                <a class="site-nav-link" href="private-client/index.html">Private Client</a>
+                <div class="site-nav-link site-nav-dropdown js-nav">Insights <svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3"
+                        stroke-linecap="square" stroke-linejoin="arcs">
+                        <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                    <div class="c-nav-marketing__dropdown site-nav-dropdown-menu">
+                        <a class="c-nav-marketing__link" href="learn.1">Learn</a>
+                        <a class="c-nav-marketing__link" href="blog">Intelligence</a>
+                    </div>
+                </div>
+
+            </ul>
+
+        </div>
+        <div class="site-nav-dropdown-logo">
+            <a class="site-nav-logo" href="app.1"><img src="https://blog.river.com/content/images/2023/07/Full-Color-White--17--4.png" alt="River Intelligence – Bitcoin Research &amp; Analysis" /></a>
+        </div>
+
+        <div class="site-nav-right">
+            <svg class="js-nav c-hamburger-menu" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<g>
+		<path d="M491.318,235.318H20.682C9.26,235.318,0,244.577,0,256s9.26,20.682,20.682,20.682h470.636
+			c11.423,0,20.682-9.259,20.682-20.682C512,244.578,502.741,235.318,491.318,235.318z" />
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M491.318,78.439H20.682C9.26,78.439,0,87.699,0,99.121c0,11.422,9.26,20.682,20.682,20.682h470.636
+			c11.423,0,20.682-9.26,20.682-20.682C512,87.699,502.741,78.439,491.318,78.439z" />
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M491.318,392.197H20.682C9.26,392.197,0,401.456,0,412.879s9.26,20.682,20.682,20.682h470.636
+			c11.423,0,20.682-9.259,20.682-20.682S502.741,392.197,491.318,392.197z" />
+	</g>
+</g>
+</svg>
+            <a class="site-nav-link site-nav-right-link" href="https://river.com/login/">Login</a>
+            <a class="site-nav-link site-nav-right-link c-button" href="https://river.com/signup/">Sign Up</a>
+        </div>
+    </div>
+    <div class="c-nav-marketing__dropdown">
+        <a class="c-nav-marketing__link" href="https://river.com/about/">About</a>
+        <a class="c-nav-marketing__link" href="https://river.com/security/">Security</a>
+        <a class="c-nav-marketing__link" href="private-client/index.html">Private Client</a>
+        <a class="c-nav-marketing__link" href="learn.1">Learn</a>
+        <a class="c-nav-marketing__link" href="login">Login</a>
+        <a class="c-nav-marketing__link" href="https://river.com/signup/">Sign Up</a>
+    </div>
+
+</nav><header class="site-home-header">
+    <div class="c-header-background">
+        <div class="inner">
+            
+            <div class="site-header-content">
+                <div class="logo-sub-nav">
+                <div class="site-header-logo-box">
+                    <a href="blog">
+                    <img src="https://f.hubspotusercontent10.net/hubfs/5916512/intelligence-logo.svg" alt="River Intelligence – Bitcoin Research &amp; Analysis" />
+                    </a>
+                </div>
+                <div class="site-sub-nav-wrapper">
+                    <ul class="sub-nav">
+                        <li><a id="home" class="current" href="blog">Home</a></li>
+                        <li><a id="market-insights" href="https://blog.river.com/tag/market-insights/">Market Insights</a></li>
+                        <li><a id="engineering" href="https://blog.river.com/tag/engineering/">Engineering</a></li>
+                        <li><a id="company" href="https://blog.river.com/tag/company/">Company Announcements</a></li>
+                    </ul>
+                </div>
+                </div>
+                <!-- subscribe box --> 
+                <div class="c-learn-subscribe__form js-subscribeFormContainer">
+                  <p class="c-learn-subscribe-text">Sign up for our curated weekly newsletter delivering exclusive market insights to your inbox.</p>
+                  <form action="https://api.hsforms.com/submissions/v3/integration/submit/5916512/7c0adb48-e7af-473e-a382-8cc534388d22", method="post" class="js-subscribeForm">
+                    <div class="c-learn-subscribe__form-fields">
+                      <input type="email" placeholder="Email Address" name="email" required>
+                      <input type="submit" value="Subscribe" class="c-learn-subscribe__form--button">
+                    </div>
+                  </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+<main id="site-main" class="site-main outer">
+    
+    <div class="inner posts">
+
+        <div class="post-feed">
+
+                <article class="post-card post post-card-large">
+
+    <a class="post-card-image-link" href="https://blog.river.com/zero-fee-hourly-recurring-orders/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/11/hourly-recurring-order-animation-2.gif 300w,
+                   https://blog.river.com/content/images/size/w600/2023/11/hourly-recurring-order-animation-2.giff 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/11/hourly-recurring-order-animation-2.gifif 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/11/hourly-recurring-order-animation-2.gifgif 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/11/hourly-recurring-order-animation-2.gif"
+            alt="Introducing: Zero-Fee Hourly Recurring Orders"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/zero-fee-hourly-recurring-orders/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">Introducing: Zero-Fee Hourly Recurring Orders</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Why did we build this?
+
+Since the beginning of my Bitcoin journey in 2013 I have stacked the majority of my coins through dollar-cost averaging. At the time, I felt</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Alexander Leishman
+                    </div>
+            
+                    <a href="https://blog.river.com/author/alexander-leishman/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2020/12/leishman.jpg" alt="Alexander Leishman" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/alexander-leishman/">Alexander Leishman</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-11-07">7 Nov 2023</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-river-research ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/the-lightning-network-in-2023/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/10/River-Lightning-Report-2023.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/10/River-Lightning-Report-2023.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/10/River-Lightning-Report-2023.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/10/River-Lightning-Report-2023.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/10/River-Lightning-Report-2023.png"
+            alt="The Lightning Network Grew by 1212% in 2 Years"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/the-lightning-network-in-2023/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">River Research</div>
+                <h2 class="post-card-title">The Lightning Network Grew by 1212% in 2 Years</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>How many transactions are happening on the Lightning Network? How many people are using it? That and so much more in our new report.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Sam Wouters
+                    </div>
+            
+                    <a href="https://blog.river.com/author/sam/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2022/10/Sam-Wouters.jpg" alt="Sam Wouters" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/sam/">Sam Wouters</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-10-10">10 Oct 2023</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/how-much-bitcoin-is-gone-forever/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/09/intelligence-banner.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/09/intelligence-banner.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/09/intelligence-banner.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/09/intelligence-banner.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/09/intelligence-banner.png"
+            alt="🤯 How Much Bitcoin Is Gone Forever?"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/how-much-bitcoin-is-gone-forever/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">🤯 How Much Bitcoin Is Gone Forever?</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>We explore estimates on the amount of lost bitcoin and provide actionable advice on how you can protect your stack.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-09-06">6 Sep 2023</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/presidents-are-talking-bitcoin/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/08/intelligence-banner-1.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/08/intelligence-banner-1.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/08/intelligence-banner-1.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/08/intelligence-banner-1.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/08/intelligence-banner-1.png"
+            alt="🗳️ Presidents Are Talking Bitcoin"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/presidents-are-talking-bitcoin/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">🗳️ Presidents Are Talking Bitcoin</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Bitcoin ascends into the political main stage with multiple candidates crafting their stances on it. Let’s break it down.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-08-21">21 Aug 2023</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/what-do-altcoins-venture-capitalists-and-cbdcs-have-in-common/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/08/intelligence-banner.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/08/intelligence-banner.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/08/intelligence-banner.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/08/intelligence-banner.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/08/intelligence-banner.png"
+            alt="What do Altcoins, Venture Capitalists, and CBDCs have in common?"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/what-do-altcoins-venture-capitalists-and-cbdcs-have-in-common/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">What do Altcoins, Venture Capitalists, and CBDCs have in common?</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>We provide context on the latest eyeball-scanning fiasco coming out of Silicon Valley and share a new Bitcoin partnership.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/riverfinancial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4--1.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/riverfinancial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-07-27">27 Jul 2023</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-product-news ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/rivers-zero-fee-dollar-cost-averaging-explained/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/06/banner.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/06/banner.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/06/banner.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/06/banner.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/06/banner.png"
+            alt="River&#x27;s Zero-Fee Dollar-Cost Averaging Explained"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/rivers-zero-fee-dollar-cost-averaging-explained/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Product News</div>
+                <h2 class="post-card-title">River&#x27;s Zero-Fee Dollar-Cost Averaging Explained</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Insights on the "what", "why", and "how" behind our Zero-Fee Dollar Cost Averaging product.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/riverfinancial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4--1.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/riverfinancial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-06-28">28 Jun 2023</time> <span class="bull">&bull;</span> 4 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights post-card-large">
+
+    <a class="post-card-image-link" href="https://blog.river.com/what-should-you-do-with-this-etf-news/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/06/logo-horizontal.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/06/logo-horizontal.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/06/logo-horizontal.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/06/logo-horizontal.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/06/logo-horizontal.png"
+            alt="What should you do with this ETF news?"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/what-should-you-do-with-this-etf-news/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">What should you do with this ETF news?</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>We keep you up-to-date on the latest happenings of financial institutions' Bitcoin adoption.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/riverfinancial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4--1.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/riverfinancial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-06-23">23 Jun 2023</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/how-many-people-hold-bitcoin-today/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/06/intelligence-banner.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/06/intelligence-banner.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/06/intelligence-banner.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/06/intelligence-banner.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/06/intelligence-banner.png"
+            alt="How Many People Hold Bitcoin Today? 🤔"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/how-many-people-hold-bitcoin-today/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">How Many People Hold Bitcoin Today? 🤔</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Sharing our latest research report "Bitcoin vs the $150 Trillion Global Payments Industry", a recent blog post about our cold storage model, and the best of Bitcoin Twitter.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-06-19">19 Jun 2023</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-river-research ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/bitcoin-vs-the-156-trillion-global-payments-industry/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/06/River-Payments-Research-1.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/06/River-Payments-Research-1.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/06/River-Payments-Research-1.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/06/River-Payments-Research-1.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/06/River-Payments-Research-1.png"
+            alt="Bitcoin vs the $156 Trillion Global Payments Industry"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/bitcoin-vs-the-156-trillion-global-payments-industry/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">River Research</div>
+                <h2 class="post-card-title">Bitcoin vs the $156 Trillion Global Payments Industry</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Bitcoin's use case for payments has grown, but why have business and consumer adoption been slow so far?</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Sam Wouters
+                    </div>
+            
+                    <a href="https://blog.river.com/author/sam/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2022/10/Sam-Wouters.jpg" alt="Sam Wouters" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/sam/">Sam Wouters</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-06-14">14 Jun 2023</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/how-river-secures-client-funds/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/06/how-river-secure-funds-banner-2-2.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/06/how-river-secure-funds-banner-2-2.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/06/how-river-secure-funds-banner-2-2.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/06/how-river-secure-funds-banner-2-2.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/06/how-river-secure-funds-banner-2-2.png"
+            alt="How River Secures Client Funds"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/how-river-secures-client-funds/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">How River Secures Client Funds</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>When deciding which Bitcoin brokerage to do business with, and to potentially store funds with, it is important to understand the custody model that an organization employs. Is the firm</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-06-06">6 Jun 2023</time> <span class="bull">&bull;</span> 5 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights tag-newsroom ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/new-bitcoin-tech-whats-going-on-with-ledger/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/06/intel-banner-new.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/06/intel-banner-new.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/06/intel-banner-new.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/06/intel-banner-new.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/06/intel-banner-new.png"
+            alt="New Bitcoin Tech &amp; What’s Going On With Ledger"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/new-bitcoin-tech-whats-going-on-with-ledger/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">New Bitcoin Tech &amp; What’s Going On With Ledger</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>We examine the fallout from Ledger's recent feature announcement and explore some highly anticipated bitcoin developments.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-05-26">26 May 2023</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights tag-newsroom ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/busting-bitcoin-minings-energy-usage-fud/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/06/Mining-Intelligence-Banner--May-2023-.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/06/Mining-Intelligence-Banner--May-2023-.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/06/Mining-Intelligence-Banner--May-2023-.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/06/Mining-Intelligence-Banner--May-2023-.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/06/Mining-Intelligence-Banner--May-2023-.png"
+            alt="Busting Bitcoin Mining’s Energy Usage FUD"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/busting-bitcoin-minings-energy-usage-fud/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">Busting Bitcoin Mining’s Energy Usage FUD</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>We walk you through how bitcoin mining actually works, discuss an interesting way mining is being utilized in Ireland, and highlight the best of bitcoin Twitter.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-05-03">3 May 2023</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights tag-product-news post-card-large">
+
+    <a class="post-card-image-link" href="https://blog.river.com/hands-on-approach-to-lightning-network/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/06/intel-LN-banner.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/06/intel-LN-banner.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/06/intel-LN-banner.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/06/intel-LN-banner.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/06/intel-LN-banner.png"
+            alt="Taking a hands-on approach to The Lightning Network ⚡"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/hands-on-approach-to-lightning-network/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">Taking a hands-on approach to The Lightning Network ⚡</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>We introduce some media-focused Lightning applications that you can use today, and share some of Bitcoin Twitter’s best stories.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-04-19">19 Apr 2023</time> <span class="bull">&bull;</span> 4 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/reservations-on-the-federal-reserve-printing/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/04/unnamed--31--1.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/04/unnamed--31--1.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/04/unnamed--31--1.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/04/unnamed--31--1.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/04/unnamed--31--1.png"
+            alt="What does money printing &amp; 400 Exahash mean for Bitcoin?"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/reservations-on-the-federal-reserve-printing/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">What does money printing &amp; 400 Exahash mean for Bitcoin?</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Comparing the Fed's recent money printing resulting from the March 2023 bank runs against past campaigns. Plus a review of the continually increasing hash rate despite market headwinds.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-03-27">27 Mar 2023</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/making-bitcoin-less-overwhelming/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/04/keeping-informed.jpg 300w,
+                   https://blog.river.com/content/images/size/w600/2023/04/keeping-informed.jpgg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/04/keeping-informed.jpgpg 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/04/keeping-informed.jpgjpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/04/keeping-informed.jpg"
+            alt="Making Bitcoin less overwhelming 🤯"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/making-bitcoin-less-overwhelming/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">Making Bitcoin less overwhelming 🤯</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Sharing the results of a round of subscriber feedback. Plus sharing some insights on market concerns with U.S. banks, and a look at the OP_VAULT proposal.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-03-16">16 Mar 2023</time> <span class="bull">&bull;</span> 3 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/ordinals-a-new-nft-protocol-on-bitcoin-hype-or-a-distraction/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/04/unnamed--31--2.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/04/unnamed--31--2.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/04/unnamed--31--2.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/04/unnamed--31--2.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/04/unnamed--31--2.png"
+            alt="Ordinals: A new NFT protocol on Bitcoin, hype or a distraction?"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/ordinals-a-new-nft-protocol-on-bitcoin-hype-or-a-distraction/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">Ordinals: A new NFT protocol on Bitcoin, hype or a distraction?</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Reviewing the recent trend of the ordinal inscription protocol being used to store large amounts of data onto the bitcoin blockchain.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-02-02">2 Feb 2023</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-market-insights ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/nostr-transparency-and-an-eventful-2023/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/04/unnamed--31-.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/04/unnamed--31-.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/04/unnamed--31-.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/04/unnamed--31-.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/04/unnamed--31-.png"
+            alt="Nostr, Transparency, and an Eventful 2023"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/nostr-transparency-and-an-eventful-2023/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">Market Insights</div>
+                <h2 class="post-card-title">Nostr, Transparency, and an Eventful 2023</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>This release announces River's presence on Nostr, the decentralized communications protocol. Additionally provides an overview of "How Bitcoin Flows through River", and provides a list of Bitcoin events in 2023.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-01-20">20 Jan 2023</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/how-your-bitcoin-flows-through-river/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2023/01/how-your-bitcoin-flows-through-river.png 300w,
+                   https://blog.river.com/content/images/size/w600/2023/01/how-your-bitcoin-flows-through-river.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2023/01/how-your-bitcoin-flows-through-river.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2023/01/how-your-bitcoin-flows-through-river.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2023/01/how-your-bitcoin-flows-through-river.png"
+            alt="How Your Bitcoin Flows Through River"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/how-your-bitcoin-flows-through-river/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">How Your Bitcoin Flows Through River</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>As a (potential) client, you may be wondering how the buying and selling of bitcoin works behind the scenes at River. Are you being offered a fair price? What happens</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Sam Wouters
+                    </div>
+            
+                    <a href="https://blog.river.com/author/sam/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2022/10/Sam-Wouters.jpg" alt="Sam Wouters" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/sam/">Sam Wouters</a></span>
+                <span class="post-card-byline-date"><time datetime="2023-01-11">11 Jan 2023</time> <span class="bull">&bull;</span> 6 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-river-research post-card-large">
+
+    <a class="post-card-image-link" href="https://blog.river.com/what-could-bitcoin-mining-look-like-at-one-zettahash/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2022/12/River-Research-Mining.png 300w,
+                   https://blog.river.com/content/images/size/w600/2022/12/River-Research-Mining.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2022/12/River-Research-Mining.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2022/12/River-Research-Mining.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2022/12/River-Research-Mining.png"
+            alt="What Could Bitcoin Mining Look Like at One Zettahash?"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/what-could-bitcoin-mining-look-like-at-one-zettahash/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">River Research</div>
+                <h2 class="post-card-title">What Could Bitcoin Mining Look Like at One Zettahash?</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>In April 2022, we launched a hosted mining product to help anyone who does not want to physically run their own mining operation enter the Bitcoin mining industry. We have</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Sam Wouters
+                    </div>
+            
+                    <a href="https://blog.river.com/author/sam/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2022/10/Sam-Wouters.jpg" alt="Sam Wouters" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/sam/">Sam Wouters</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-12-08">8 Dec 2022</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/security-best-practices-to-consider/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2022/12/unnamed--1-.png 300w,
+                   https://blog.river.com/content/images/size/w600/2022/12/unnamed--1-.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2022/12/unnamed--1-.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2022/12/unnamed--1-.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2022/12/unnamed--1-.png"
+            alt="Security best practices to consider"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/security-best-practices-to-consider/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">Security best practices to consider</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>Security has always been an important topic in regards to Bitcoin. Believe it or not, employing average security measures would protect users from most mishaps that occur.</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-12-06">6 Dec 2022</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/can-bitcoin-level-up/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2022/11/mario.png 300w,
+                   https://blog.river.com/content/images/size/w600/2022/11/mario.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2022/11/mario.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2022/11/mario.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2022/11/mario.png"
+            alt="Can Bitcoin Level Up?"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/can-bitcoin-level-up/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">Can Bitcoin Level Up?</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>There’s over a dozen proposed BTC upgrades. See our favorites in the latest River Intelligence</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-11-18">18 Nov 2022</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/what-bear-market/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2022/10/brick1.jpg 300w,
+                   https://blog.river.com/content/images/size/w600/2022/10/brick1.jpgg 600w,
+                  https://blog.river.com/content/images/size/w1000/2022/10/brick1.jpgpg 1000w,
+                 https://blog.river.com/content/images/size/w2000/2022/10/brick1.jpgjpg 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2022/10/brick1.jpg"
+            alt="What Bear Market?"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/what-bear-market/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">What Bear Market?</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>The builders of the Bitcoin network are experiencing the exact opposite of a bear market as more BTC miners continue to stack up and join the network</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-10-17">17 Oct 2022</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/announcing-river-lightning-services-rls/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2022/10/rls-banner.png 300w,
+                   https://blog.river.com/content/images/size/w600/2022/10/rls-banner.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2022/10/rls-banner.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2022/10/rls-banner.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2022/10/rls-banner.png"
+            alt="Announcing River Lightning Services (RLS)"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/announcing-river-lightning-services-rls/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">Announcing River Lightning Services (RLS)</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>TL;DR we’re launching RLS [https://www.rls.dev/] to power the future of payments
+on the Internet. 
+
+At River we believe that Bitcoin is on a trajectory to</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Alexander Leishman
+                    </div>
+            
+                    <a href="https://blog.river.com/author/alexander-leishman/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2020/12/leishman.jpg" alt="Alexander Leishman" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/alexander-leishman/">Alexander Leishman</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-10-10">10 Oct 2022</time> <span class="bull">&bull;</span> 2 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post tag-river-research ">
+
+    <a class="post-card-image-link" href="https://blog.river.com/insights-from-the-4th-largest-lightning-network-node/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2022/10/lightning-1.png 300w,
+                   https://blog.river.com/content/images/size/w600/2022/10/lightning-1.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2022/10/lightning-1.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2022/10/lightning-1.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2022/10/lightning-1.png"
+            alt="Insights From the 4th Largest Lightning Network Node"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/insights-from-the-4th-largest-lightning-network-node/">
+
+            <header class="post-card-header">
+                    <div class="post-card-primary-tag">River Research</div>
+                <h2 class="post-card-title">Insights From the 4th Largest Lightning Network Node</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>River has been a participant in Bitcoin’s Lightning Network since 2019. As of 2022 we have grown into the fourth largest node on Lightning by bitcoin capacity. We now</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        Sam Wouters
+                    </div>
+            
+                    <a href="https://blog.river.com/author/sam/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2022/10/Sam-Wouters.jpg" alt="Sam Wouters" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/sam/">Sam Wouters</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-10-10">10 Oct 2022</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+
+                <article class="post-card post post-card-large">
+
+    <a class="post-card-image-link" href="https://blog.river.com/a-snapshot-of-the-past-and-a-glimpse-into-the-future/">
+        <img class="post-card-image"
+            srcset="https://blog.river.com/content/images/size/w300/2022/10/unnamed--7--1.png 300w,
+                   https://blog.river.com/content/images/size/w600/2022/10/unnamed--7--1.pngg 600w,
+                  https://blog.river.com/content/images/size/w1000/2022/10/unnamed--7--1.pngng 1000w,
+                 https://blog.river.com/content/images/size/w2000/2022/10/unnamed--7--1.pngpng 2000w"
+            sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy"
+            src="https://blog.river.com/content/images/size/w600/2022/10/unnamed--7--1.png"
+            alt="A snapshot of the past, and a glimpse into the future"
+        />
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="https://blog.river.com/a-snapshot-of-the-past-and-a-glimpse-into-the-future/">
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">A snapshot of the past, and a glimpse into the future</h2>
+            </header>
+
+            <section class="post-card-excerpt">
+                    <p>See where we’ve been and where we might be headed in this edition of River intelligence</p>
+            </section>
+
+        </a>
+
+        <footer class="post-card-meta">
+            <ul class="author-list">
+                <li class="author-list-item">
+            
+                    <div class="author-name-tooltip">
+                        River
+                    </div>
+            
+                    <a href="https://blog.river.com/author/river-financial/" class="static-avatar">
+                        <img class="author-profile-image" src="https://blog.river.com/content/images/size/w100/2023/07/mark--4-.png" alt="River" />
+                    </a>
+                </li>
+            </ul>
+            <div class="post-card-byline-content">
+                <span><a href="https://blog.river.com/author/river-financial/">River</a></span>
+                <span class="post-card-byline-date"><time datetime="2022-10-05">5 Oct 2022</time> <span class="bull">&bull;</span> 1 min read</span>
+            </div>
+        </footer>
+
+    </div>
+
+</article>
+
+        </div>
+
+    </div>
+</main>
+
+
+
+        <footer class="c-public-footer">
+  <div class="c-public-footer__inner">
+    <div class="c-public-footer__column c-public-footer__left">
+			<div class="c-public-footer__info">
+      	<div class="c-public-footer__logo h-mb-2">
+      	  <img src="https://blog.river.com/content/images/2023/07/Full-Color-White--17--4.png" alt="River Financial Logo">
+      	</div>
+      	<div class="c-public-footer__copyright">
+      	  <p>NMLS ID#1906809</p>
+      	  <p>© 2021 River Financial Inc. All rights reserved.</p>
+				</div>
+			</div>
+      <div class="c-public-footer__app">
+        <a href="https://apps.apple.com/us/app/river-buy-bitcoin-securely/id1536176542" target="_blank">
+          <img src="https://blog.river.com/assets/images/icons/app.svg?v=26a0c7c141" alt="River Financial iOS app" />
+        </a>
+			</div>
+		</div>
+
+		<div class="c-public-footer__column c-public-footer__grid-wrapper">
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Product</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					<a class="c-link" href="signup">Sign Up</a>
+          <a class="c-link" href="app.1">Mobile App</a>
+          <a class="c-link" href="buy-bitcoin">Buy Bitcoin</a>
+          <a class="c-link" href="security">Security</a>
+          <a class="c-link" href="private-client">Private Client</a>
+          <a class="c-link" href="institutions">Institutions</a>
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Company</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					<a class="c-link" href="https://www.rls.dev/">Developers (RLS)</a>
+					<a class="c-link" href="about">About</a>
+          <a class="c-link" href="https://jobs.lever.co/riverfinancial" target="_blank">Careers</a>
+          <a class="c-link" href="https://blog.river.com/tag/company/">Newsroom</a>
+          <a class="c-link" href="https://river.com/support/knowledge-base/articles/supported-states">Areas of Availability</a>
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Support</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					<a class="c-link" href="https://river.com/support/knowledge-base">Knowledge Base</a>
+          <a class="c-link" href="support">Contact Support</a>
+          <a class="c-link" href="https://status.river.com/" target="_blank">Site Status</a>
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Social</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					<a class="c-link" href="https://twitter.com/River" target="_blank">
+            <img class="c-public-footer__social-icon" src="https://blog.river.com/assets/images/icons/twitter.svg?v=26a0c7c141" alt="Social Media Icon for Twitter">
+            <p style="display: inline;">Twitter</p>
+          </a>
+          <a class="c-link" href="https://www.linkedin.com/company/riverfinancial" target="_blank">
+            <img class="c-public-footer__social-icon" src="https://blog.river.com/assets/images/icons/linkedin.svg?v=26a0c7c141" alt="Social Media Icon for LinkedIn">
+            <p style="display: inline;">LinkedIn</p>
+          </a>
+          <a class="c-link" href="https://www.facebook.com/RiverFinancialOfficial" target="_blank">
+            <img class="c-public-footer__social-icon" src="https://blog.river.com/assets/images/icons/facebook.svg?v=26a0c7c141" alt="Social Media Icon for Facebook">
+            <p style="display: inline;">Facebook</p>
+          </a>
+          <a class="c-link" href="https://www.instagram.com/RiverFinancial" target="_blank">
+            <img class="c-public-footer__social-icon" src="https://blog.river.com/assets/images/icons/instagram.svg?v=26a0c7c141" alt="Social Media Icon for Instagram">
+            <p style="display: inline;">Instagram</p>
+          </a>
+          <a class="c-link" href="https://www.youtube.com/channel/UC-MF1538pip3DHDWXQy5iug" target="_blank">
+            <img class="c-public-footer__social-icon" src="https://blog.river.com/assets/images/icons/youtube.svg?v=26a0c7c141" alt="Social Media Icon for YouTube">
+            <p style="display: inline;">YouTube</p>
+          </a>
+          <a class="c-link" href="https://www.github.com/RiverFinancial" target="_blank">
+            <img class="c-public-footer__social-icon" src="https://blog.river.com/assets/images/icons/github.svg?v=26a0c7c141" alt="Social Media Icon for GitHub">
+            <p style="display: inline;">GitHub</p>
+          </a>
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Learn</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					<a class="c-link" href="learn.1">Learning Center</a>
+          <a class="c-link" href="learn/bitcoin-basics/index.html">Bitcoin Basics</a>
+          <a class="c-link" href="learn/bitcoin-markets-and-price/index.html" >Bitcoin Markets</a>
+          <a class="c-link" href="learn/bitcoin-and-blockchain-technology/index.html">Bitcoin Technology</a>
+          <a class="c-link" href="learn/terms/index.html">Glossary</a>
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Featured Articles</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					<a class="c-link" href="learn/what-is-bitcoin/index.html">What Is Bitcoin?</a>
+          <a class="c-link" href="learn/how-to-buy-bitcoin.1">How to Buy Bitcoin</a>
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>River Intelligence</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					<a class="c-link" href="https://blog.river.com/tag/market-insights/">Market Insights</a>
+          <a class="c-link" href="https://blog.river.com/tag/engineering/">Bitcoin Engineering</a>
+				</div>
+			</div>
+
+			<div class="c-public-footer__grid-item">
+				<div class="c-public-footer__grid-item-title">
+					<h4>Legal</h4>
+				</div>
+				<div class="c-public-footer__grid-item-list">
+					<a class="c-link" href="legal/licenses">Licenses</a>
+          <a class="c-link" href="legal/privacy">Privacy Policy</a>
+          <a class="c-link" href="legal/terms">Terms of Service</a>
+				</div>
+			</div>
+		</div>
+  </div>
+</footer>
+
+    </div>
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script src="https://blog.river.com/assets/built/casper.js?v=26a0c7c141"></script>
+
+    <script>
+        // Parse the URL parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Give the parameter a variable name
+        var action = getParameterByName('action');
+
+        $(document).ready(function () {
+            if (action == 'subscribe') {
+                $('body').addClass("subscribe-success");
+            }
+
+            $('.subscribe-success-message .subscribe-close').click(function () {
+                $('.subscribe-success-message').addClass('close');
+            });
+
+            // Reset form on opening subscrion overlay
+            $('.subscribe-button').click(function() {
+                $('.subscribe-overlay form').removeClass();
+                $('.subscribe-email').val('');
+            });
+        });
+    </script>
+
+    <script>
+
+    // NOTE: Scroll performance is poor in Safari
+    // - this appears to be due to the events firing much more slowly in Safari.
+    //   Dropping the scroll event and using only a raf loop results in smoother
+    //   scrolling but continuous processing even when not scrolling
+    $(document).ready(function () {
+        
+        var nav = document.querySelector('.site-nav-main .site-nav');
+        var feed = document.querySelector('.post-feed');
+
+        var lastScrollY = window.scrollY;
+        var lastWindowHeight = window.innerHeight;
+        var lastDocumentHeight = $(document).height();
+        var ticking = false;
+
+        function onScroll() {
+            lastScrollY = window.scrollY;
+            requestTick();
+        }
+
+        function onResize() {
+            lastWindowHeight = window.innerHeight;
+            lastDocumentHeight = $(document).height();
+            requestTick();
+        }
+
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(update);
+            }
+            ticking = true;
+        }
+
+        function update() {
+            var trigger = feed.getBoundingClientRect().top + window.scrollY;
+            var progressMax = lastDocumentHeight - lastWindowHeight;
+
+            // show/hide nav
+            if (lastScrollY >= trigger - 20) {
+                nav?.classList.add('fixed-nav-active');
+            } else {
+                nav?.classList.remove('fixed-nav-active');
+            }
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onResize, false);
+
+        update();
+
+    });
+</script>
+
+
+    
+
+</body>
+</html>
